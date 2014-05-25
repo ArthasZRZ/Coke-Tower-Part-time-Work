@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfRibbonApplication1.HeatDoubleImporter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="虚拟热电偶导入" Height="500" Width="650"
+        Background="{DynamicResource 99\,99\,99}"
+        >
+    <Window.Resources>
+        
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Left" Orientation="Horizontal" Margin="8,0,0,0">
+            <Button Name="BtnImporter" Content="导入" Style="{DynamicResource Button Simple}" Click="BtnImporter_Click_1"
+                    Foreground="White"
+                    Width="50" Margin="5,5,5,5"></Button>
+            <Button Name="BtnClearer" Content="清空" Click="BtnClearer_Click_1" Style="{DynamicResource Button Simple}"
+                    Foreground="White"
+                    Width="50" Margin="5,5,5,5"></Button>
+        </StackPanel>
+        <Grid Grid.Row="1" Margin="8,0,8,8">
+            <DataGrid  x:Name="ShowImportedData" AutoGenerateColumns="False" CanUserAddRows = "false">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="名称" Width="*" Binding="{Binding Path=Name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="X" Width="140" Binding="{Binding Path=Xstr}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Y" Width="140" Binding="{Binding Path=Ystr}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Z" Width="140" Binding="{Binding Path=Zstr}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>

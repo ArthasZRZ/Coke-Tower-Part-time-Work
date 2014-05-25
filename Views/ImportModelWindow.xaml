@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfRibbonApplication1.ImportModelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Background="{DynamicResource 99\,99\,99}"
+        Title="ImportModelWindow" Height="250" Width="540">
+    <Grid Height="209">
+        <Label Content="部件名称" Foreground="White" Height="28" HorizontalAlignment="Left" Margin="56,12,0,0" Name="label1" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="117,17,0,0" Name="textBlock1" VerticalAlignment="Top" Width="371" />
+        <RadioButton Content="lis格式" Foreground="White" Height="15" Margin="117,41,321,0" Name="radioButton1" VerticalAlignment="Top" />
+        <RadioButton Content="db格式" Foreground="White" Height="15" HorizontalAlignment="Left" Margin="212,41,0,0" Name="radioButton2" VerticalAlignment="Top" Width="73" />
+        <Label Content="节点文件" Foreground="White" Height="28" HorizontalAlignment="Left" Margin="56,71,0,0" Name="label2" VerticalAlignment="Top" />
+        <Label Content="元素文件" Foreground="White" Height="28" HorizontalAlignment="Left" Margin="56,120,0,0" Name="label3" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="117,76,0,0" x:Name="NodeFileTextBox" VerticalAlignment="Top" Width="289" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="117,125,0,0" x:Name="EleFileTextBox" VerticalAlignment="Top" Width="289" />
+        <Button Content="确认" Foreground="White" Style="{DynamicResource Button Simple}"
+                Height="26" HorizontalAlignment="Left" Margin="400,167,0,0" Name="ComfirmButton" VerticalAlignment="Top" Width="96" Click="ComfirmButton_Click" />
+        <Button Content="浏览" Foreground="White" Style="{DynamicResource Button Simple}"
+                Height="28" HorizontalAlignment="Left" Margin="431,76,0,0" Name="LookUpFile_Node" VerticalAlignment="Top" Width="57" Click="LookUpFile_Node_Click" />
+        <Button Content="浏览" Foreground="White" Style="{DynamicResource Button Simple}"
+                Height="28" HorizontalAlignment="Left" Margin="431,124,0,0" Name="LookUpFile_Ele" VerticalAlignment="Top" Width="57" Click="LookUpFile_Ele_Click" />
+    </Grid>
+</Window>
+
+    

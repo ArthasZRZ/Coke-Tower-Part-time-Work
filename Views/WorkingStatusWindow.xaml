@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfRibbonApplication1.Views.WorkingStatusWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vc="clr-namespace:Visifire.Charts;assembly=WPFVisifire.Charts"
+        Title="WorkingStatusWindow" Height="550" Width="600"
+        WindowStyle="SingleBorderWindow" ResizeMode="NoResize"
+        Background="{DynamicResource 99\,99\,99}">
+    <StackPanel Name="stackp">
+        <vc:Chart Name="StatusChart" Height="300" Margin="5, 10, 5, 5" Theme="Theme1">
+            <vc:Chart.Titles>
+                <vc:Title Text="工况分析"/>
+            </vc:Chart.Titles>
+            <vc:Chart.AxesX>
+                <vc:Axis ScrollBarScale="1"/>
+            </vc:Chart.AxesX>
+        </vc:Chart>
+        <Label Content="公式"/>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="油气预热"/>
+            <TextBox Width="400" HorizontalAlignment="Right" Margin="50,5,10,5" Text="@{TIME}"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="小大吹气"/>
+            <TextBox Width="400" HorizontalAlignment="Right" Margin="50,5,10,5" Text="(-2.36*({TIME}/3600)^2+161*{TIME}/9000-40.2)*({y}+6.529)/35.976+2.36*({TIME}/3600)^2+49*{TIME}/9000+107.2"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="进油结焦"/>
+            <TextBox Width="400" HorizontalAlignment="Right" Margin="50,5,10,5" Text="(-2.36*({TIME}/3600)^2-49*{TIME}/9000+295.8)*({y}+6.529)/35.976+2.36*({TIME}/3600)^2+49*{TIME}/9000+107.2"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="给水结焦"/>
+            <TextBox Width="400" HorizontalAlignment="Right" Margin="50,5,10,5"></TextBox>
+        </StackPanel>
+    </StackPanel>
+</Window>

@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{74E33DAE-7195-4D78-BB28-5EB51DBDB97C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WpfRibbonApplication1</RootNamespace>
+    <AssemblyName>MyProject</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20621.0</ExpressionBlendVersion>
+    <PublishUrl>C:\Users\ArthasZRZ\v3.1\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>44ED1AFCD86A5B16645F606E8B9C2D53DBC8F9CB</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MyProject_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Kitware.mummy.Runtime">
+      <HintPath>C:\Users\kyzamiz\Desktop\PartTimeShitJob\MyProject\MyProject\bin\Debug\Kitware.mummy.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Kitware.VTK">
+      <HintPath>C:\Users\kyzamiz\Desktop\PartTimeShitJob\MyProject\MyProject\bin\Debug\Kitware.VTK.dll</HintPath>
+    </Reference>
+    <Reference Include="NDatabase3">
+      <HintPath>C:\Users\kyzamiz\Desktop\PartTimeShitJob\MyProject\MyProject\bin\Debug\NDatabase3.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="PresentationFramework.Luna" />
+    <Reference Include="PresentationFramework.Royale" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFToolkit">
+      <HintPath>Z:\Users\ArthasZRZ\Downloads\51CTO下载-visifire_v4.0.2\WPF Binaries\WPFToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFVisifire.Charts">
+      <HintPath>C:\Users\kyzamiz\Desktop\PartTimeShitJob\MyProject\MyProject\bin\Debug\WPFVisifire.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFVisifire.Gauges">
+      <HintPath>C:\Users\kyzamiz\Desktop\PartTimeShitJob\MyProject\MyProject\bin\Debug\WPFVisifire.Gauges.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CraftsMode.xaml.cs" />
+    <Compile Include="MainWindow.xaml.cs" />
+    <Compile Include="Models\CraftsModeEnv.cs" />
+    <Compile Include="Models\CraftsModeExecutor.cs" />
+    <Compile Include="Models\LISFileReader.cs" />
+    <Compile Include="Models\ModelColorGenerator.cs" />
+    <Compile Include="Models\ModelPropertiesResolver.cs" />
+    <Compile Include="Models\RunTimeInfo.cs" />
+    <Compile Include="Models\VTKFormPreExecutor.cs" />
+    <Compile Include="Models\WorkSpaceCategory.cs" />
+    <Compile Include="Models\WorkStatusDataSeriesGenerator.cs" />
+    <Compile Include="SelectModeWindow.xaml.cs">
+      <DependentUpon>SelectModeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BuildNewProjWindow.xaml.cs">
+      <DependentUpon>BuildNewProjWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VTKFormRender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VTKFormRender.Designer.cs">
+      <DependentUpon>VTKFormRender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HeatDoubleImporter.xaml.cs">
+      <DependentUpon>HeatDoubleImporter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ImportModelWindow.xaml.cs">
+      <DependentUpon>ImportModelWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CSVReader.cs" />
+    <Compile Include="Models\HeatDoublers.cs" />
+    <Compile Include="Models\StoreDB.cs" />
+    <Compile Include="Models\StringConverter.cs" />
+    <Compile Include="Views\OpenProjWindow.xaml.cs">
+      <DependentUpon>OpenProjWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StructureFrameworkTypes.cs" />
+    <Compile Include="Models\TowerModel.cs" />
+    <Compile Include="Views\RunTimeSettingWindow.xaml.cs">
+      <DependentUpon>RunTimeSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkingStatusWindow.xaml.cs">
+      <DependentUpon>WorkingStatusWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkingDataImporterWindow.xaml.cs">
+      <DependentUpon>WorkingDataImporterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WorkSpaceClass.cs" />
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Welcome.xaml.cs" />
+    <Page Include="CraftsMode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SelectModeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BuildNewProjWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HeatDoubleImporter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImportModelWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OpenProjWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RunTimeSettingWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WorkingStatusWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WorkingDataImporterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Welcome.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="MyProject_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GridModel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ModelData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TabButton\about.png" />
+    <Resource Include="Images\TabButton\bbgl.png" />
+    <Resource Include="Images\TabButton\bmwh.png" />
+    <Resource Include="Images\TabButton\BuildCoord.png" />
+    <Resource Include="Images\TabButton\BuildNewProj.png" />
+    <Resource Include="Images\TabButton\bwcl.png" />
+    <Resource Include="Images\TabButton\bxt.png" />
+    <Resource Include="Images\TabButton\clk.png" />
+    <Resource Include="Images\TabButton\clrbss.png" />
+    <Resource Include="Images\TabButton\CompleteCheck.png" />
+    <Resource Include="Images\TabButton\CopyAction.png" />
+    <Resource Include="Images\TabButton\createreport.png" />
+    <Resource Include="Images\TabButton\DeleteAction.png" />
+    <Resource Include="Images\TabButton\dh.png" />
+    <Resource Include="Images\TabButton\drmx.png" />
+    <Resource Include="Images\TabButton\dxcq.png" />
+    <Resource Include="Images\TabButton\dzpl.png" />
+    <Resource Include="Images\TabButton\fwqpz.png" />
+    <Resource Include="Images\TabButton\gk.png" />
+    <Resource Include="Images\TabButton\GridModel.png" />
+    <Resource Include="Images\TabButton\gslj.png" />
+    <Resource Include="Images\TabButton\gwdzpl.png" />
+    <Resource Include="Images\TabButton\gwrb.png" />
+    <Resource Include="Images\TabButton\gycsjc.png" />
+    <Resource Include="Images\TabButton\hfcl.png" />
+    <Resource Include="Images\TabButton\hwsfs.png" />
+    <Resource Include="Images\TabButton\jg.png" />
+    <Resource Include="Images\TabButton\jgsz.png" />
+    <Resource Include="Images\TabButton\jtcl.png" />
+    <Resource Include="Images\TabButton\jyjj.png" />
+    <Resource Include="Images\TabButton\lfs.png" />
+    <Resource Include="Images\TabButton\ljjk.png" />
+    <Resource Include="Images\TabButton\login.png" />
+    <Resource Include="Images\TabButton\logout.png" />
+    <Resource Include="Images\TabButton\LookupCoord.png" />
+    <Resource Include="Images\TabButton\lssj.png" />
+    <Resource Include="Images\TabButton\mxkyr.png" />
+    <Resource Include="Images\TabButton\oh.png" />
+    <Resource Include="Images\TabButton\ohllyz.png" />
+    <Resource Include="Images\TabButton\OpenProj.png" />
+    <Resource Include="Images\TabButton\productinfo.png" />
+    <Resource Include="Images\TabButton\qdjk.png" />
+    <Resource Include="Images\TabButton\qx.png" />
+    <Resource Include="Images\TabButton\qxk.png" />
+    <Resource Include="Images\TabButton\qzy.png" />
+    <Resource Include="Images\TabButton\rdy.png" />
+    <Resource Include="Images\TabButton\report.png" />
+    <Resource Include="Images\TabButton\reporttemplate.png" />
+    <Resource Include="Images\TabButton\ReviseAction.png" />
+    <Resource Include="Images\TabButton\rwgl.png" />
+    <Resource Include="Images\TabButton\rz.png" />
+    <Resource Include="Images\TabButton\SaveProj.png" />
+    <Resource Include="Images\TabButton\sc.png" />
+    <Resource Include="Images\TabButton\scsz.png" />
+    <Resource Include="Images\TabButton\sjbd.png" />
+    <Resource Include="Images\TabButton\sjcl.png" />
+    <Resource Include="Images\TabButton\sjcz.png" />
+    <Resource Include="Images\TabButton\sjfx.png" />
+    <Resource Include="Images\TabButton\SolidTranformModel.png" />
+    <Resource Include="Images\TabButton\StatisticInfo.png" />
+    <Resource Include="Images\TabButton\support.png" />
+    <Resource Include="Images\TabButton\table.png" />
+    <Resource Include="Images\TabButton\tsrjlxy.png" />
+    <Resource Include="Images\TabButton\tsxss.png" />
+    <Resource Include="Images\TabButton\tzjk.png" />
+    <Resource Include="Images\TabButton\UnitSys.png" />
+    <Resource Include="Images\TabButton\user.png" />
+    <Resource Include="Images\TabButton\usergroup.png" />
+    <Resource Include="Images\TabButton\wdlc.png" />
+    <Resource Include="Images\TabButton\wh.png" />
+    <Resource Include="Images\TabButton\xck.png" />
+    <Resource Include="Images\TabButton\xnrdy.png" />
+    <Resource Include="Images\TabButton\xnylybp.png" />
+    <Resource Include="Images\TabButton\ylrqgf.png" />
+    <Resource Include="Images\TabButton\ylybp.png" />
+    <Resource Include="Images\TabButton\ynrdy.png" />
+    <Resource Include="Images\TabButton\ynylybp.png" />
+    <Resource Include="Images\TabButton\yqyr.png" />
+    <Resource Include="Images\TabButton\yt.png" />
+    <Resource Include="Images\TabButton\yx.png" />
+    <Resource Include="Images\TabButton\yxsz.png" />
+    <Resource Include="Images\TabButton\ztcl.png" />
+    <Resource Include="Images\TabButton\ztjc.png" />
+    <Resource Include="Images\TabButton\ztjk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CraftsMode.png" />
+    <Resource Include="Images\DesignMode.png" />
+    <Resource Include="Images\Launcher.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
