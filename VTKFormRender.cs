@@ -53,6 +53,8 @@ namespace WpfRibbonApplication1
         TowerModel TowerModelInstance = null;
         WorkSpaceClass WorkSpaceInstance = null;
 
+        public List<vtkCamera> StoredViewCamera;
+
         public VTKFormRender(FormParas paras, TowerModel tmpModel, WorkSpaceClass WorkSpaceInstance)
         {
             this.paras = new FormParas();
@@ -306,11 +308,74 @@ namespace WpfRibbonApplication1
             renWin.Render();
             vtkCamera camera = ren1.GetActiveCamera();
 
+            int[] camera_pos = new int[3];
+            
             if (paras.globalEnv == 1)
-                camera.SetPosition(0, -70, 0);
+                camera_pos[1] = -70;
             else
-                camera.SetPosition(0, -80, 0);
-            camera.SetRoll(180);
+                camera_pos[1] = -70;
+
+            if (paras.RotateAngle == 0)
+            {
+                camera_pos[0] = camera_pos[2] = 0;
+                camera.SetRoll(181);
+            }
+            else if (paras.RotateAngle == 180)
+            {
+                camera_pos[0] = camera_pos[2] = 0;
+                camera.SetRoll(180);
+            }
+            else if (paras.RotateAngle == 90)
+            {
+                double r = (double)Math.Abs(camera_pos[1]);
+                camera_pos[0] = (int)(-r * 0.707);
+                camera_pos[1] = (int)(-r * 0.707);
+                camera_pos[2] = 0;
+                camera.SetRoll(225);
+            }
+            else if (paras.RotateAngle == 270)
+            {
+                double r = (double)Math.Abs(camera_pos[1]);
+                camera_pos[0] = (int)(r * 0.707);
+                camera_pos[1] = (int)(-r * 0.707);
+                camera_pos[2] = 0;
+                camera.SetRoll(135);
+            }
+
+            camera.SetPosition((double)camera_pos[0], (double)camera_pos[1], (double)camera_pos[2]);
+
+            StoredViewCamera = new List<vtkCamera>();
+            for (int i = 0; i < 3; i++)
+            {
+                vtkCamera ViewCamera = new vtkCamera();
+                
+
+                if (i == 0)
+                {
+                    ViewCamera.SetPosition(camera.GetPosition()[0],
+                                           camera.GetPosition()[1],
+                                           camera.GetPosition()[2]);
+                    ViewCamera.SetRoll(camera.GetRoll());
+                }
+                else if (i == 1)
+                {
+                    ViewCamera.SetPosition(80, 0, 0);
+                    ViewCamera.SetRoll(180);
+                }
+                else if (i == 2)
+                {
+                    ViewCamera.SetPosition(0, 0, 60);
+                    ViewCamera.SetRoll(camera.GetRoll());
+                }
+                ViewCamera.SetFocalPoint(camera.GetFocalPoint()[0],
+                                              camera.GetFocalPoint()[1],
+                                              camera.GetFocalPoint()[2]);
+                ViewCamera.SetViewUp(camera.GetViewUp()[0],
+                                          camera.GetViewUp()[1],
+                                          camera.GetViewUp()[2]);
+                StoredViewCamera.Add(ViewCamera);
+            }
+
             //camera.Zoom(1.5);
         }
     }

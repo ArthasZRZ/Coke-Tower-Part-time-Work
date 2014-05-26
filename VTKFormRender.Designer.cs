@@ -58,7 +58,6 @@ namespace WpfRibbonApplication1
 
         #endregion
 
-        private Kitware.VTK.RenderWindowControl renderWindowControl1;
-
+        public Kitware.VTK.RenderWindowControl renderWindowControl1;
     }
 }

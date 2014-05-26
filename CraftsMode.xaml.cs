@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Kitware.VTK;
 
 namespace WpfRibbonApplication1
 {
@@ -22,6 +23,138 @@ namespace WpfRibbonApplication1
 			this.InitializeComponent();
 			
 			// 在此点之下插入创建对象所需的代码。
+            // 在此点之下插入创建对象所需的代码。
+            //First: Chart -- Working Status
+            Models.WorkStatusDataSeriesGenerator DataSeriesGenerator = new Models.WorkStatusDataSeriesGenerator();
+
+            DataSeriesGenerator.CSVImporter();
+            StatusChart.Series.Add(DataSeriesGenerator.GetTowerTopSeries());
+            StatusChart.Series.Add(DataSeriesGenerator.GetTowerBottomSeries());
+            StatusChart.Series[0].Name = "塔顶";
+            StatusChart.Series[1].Name = "塔底";
+            StatusChart.AnimationEnabled = false;
+
+            //Second: VTK
+            Models.CraftsModeExecutor CfExe = new Models.CraftsModeExecutor();
+            //Set the environment
+            CfExe.CraftsModeEnvSetter((int)this.WinFormGrid.Width, (int)this.WinFormGrid.Height);
+            //Get the Model
+            TowerModel CraftsModeTowerModel = CfExe.CraftsModePreExecutor();
+
+            FormParas CraftsModeFormParas = CfExe.CraftsModeFormParasGetter();
+            WorkSpaceClass CraftsModeWorkSpaceInstance = CfExe.CraftsModeWorkSpaceInstance();
+
+            VTKFormRender CraftsModeForm = new VTKFormRender(CraftsModeFormParas,
+                                                             CraftsModeTowerModel,
+                                                             CraftsModeWorkSpaceInstance);
+            CraftsModeForm.TopLevel = false;
+            CraftsModeWinForm.Child = CraftsModeForm;
+
+            // Third: Append Child of CheckBox
+            foreach (Models.HeatDoubler hd in CraftsModeWorkSpaceInstance.HeatDoublerInstances.list)
+            {
+                CheckBox cb = new CheckBox();
+                cb.Content = hd.Name;
+                
+                KeyPointsHolder.Children.Add(cb);
+            }
+
+            //Fourth: Append Child to the ComboBox
+            foreach (Models.CraftsModePreDefinedModelType pd in CfExe.CraftsModeGetModelPreDefined())
+            {
+                ModelName.Items.Add(pd.GetModelNameString());
+            }
 		}
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+               
+        }
+        private void RunModelButtonClick(object sender, RoutedEventArgs e)
+        {
+            Models.CraftsModeExecutor CfExe = new Models.CraftsModeExecutor();
+            //Set the environment
+            CfExe.CraftsModeEnvSetter((int)this.WinFormGrid.Width, (int)this.WinFormGrid.Height);
+            //Get the Model
+            int ModelIdx = ModelName.SelectedIndex - 1;
+           
+            List<Models.CraftsModePreDefinedModelType> pdList = CfExe.CraftsModeGetModelPreDefined();
+            Models.CraftsModePreDefinedModelType pd = pdList[ModelIdx];
+
+            CfExe.CraftsModeEnvModelSetter(pd.GetModelStageId(), pd.GetModelModelId(), pd.GetModelSpecialId());
+            CfExe.CraftsModeEnvStartRunningSetter();
+
+            TowerModel CraftsModeTowerModel = CfExe.CraftsModePreExecutor();
+            
+            FormParas CraftsModeFormParas = CfExe.CraftsModeFormParasGetter();
+            WorkSpaceClass CraftsModeWorkSpaceInstance = CfExe.CraftsModeWorkSpaceInstance();
+
+            VTKFormRender CraftsModeForm = new VTKFormRender(CraftsModeFormParas,
+                                                             CraftsModeTowerModel,
+                                                             CraftsModeWorkSpaceInstance);
+            CraftsModeForm.TopLevel = false;
+            CraftsModeWinForm.Child = CraftsModeForm;
+        }
+        private void FrontViewBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+            VTKFormRender form = (VTKFormRender)CraftsModeWinForm.Child;
+            vtkRenderer ren = form.renderWindowControl1.RenderWindow.GetRenderers().GetFirstRenderer();
+            vtkRenderWindow renWin = form.renderWindowControl1.RenderWindow;
+
+            vtkCamera camera = ren.GetActiveCamera();
+            camera.SetRoll(form.StoredViewCamera[0].GetRoll());
+            camera.SetPosition(form.StoredViewCamera[0].GetPosition()[0],
+                               form.StoredViewCamera[0].GetPosition()[1],
+                               form.StoredViewCamera[0].GetPosition()[2]);
+            camera.SetFocalPoint(form.StoredViewCamera[0].GetFocalPoint()[0],
+                                 form.StoredViewCamera[0].GetFocalPoint()[1],
+                                 form.StoredViewCamera[0].GetFocalPoint()[2]);
+            camera.SetViewUp(form.StoredViewCamera[0].GetViewUp()[0],
+                             form.StoredViewCamera[0].GetViewUp()[1],
+                             form.StoredViewCamera[0].GetViewUp()[2]);
+
+            renWin.Render();
+        }
+
+        private void SideViewBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+            VTKFormRender form = (VTKFormRender)CraftsModeWinForm.Child;
+            vtkRenderer ren = form.renderWindowControl1.RenderWindow.GetRenderers().GetFirstRenderer();
+            vtkRenderWindow renWin = form.renderWindowControl1.RenderWindow;
+
+            vtkCamera camera = ren.GetActiveCamera();
+            camera.SetRoll(form.StoredViewCamera[1].GetRoll());
+            camera.SetPosition(form.StoredViewCamera[1].GetPosition()[0],
+                               form.StoredViewCamera[1].GetPosition()[1],
+                               form.StoredViewCamera[1].GetPosition()[2]);
+            camera.SetFocalPoint(form.StoredViewCamera[1].GetFocalPoint()[0],
+                                 form.StoredViewCamera[1].GetFocalPoint()[1],
+                                 form.StoredViewCamera[1].GetFocalPoint()[2]);
+            camera.SetViewUp(form.StoredViewCamera[1].GetViewUp()[0],
+                             form.StoredViewCamera[1].GetViewUp()[1],
+                             form.StoredViewCamera[1].GetViewUp()[2]);
+
+            renWin.Render();
+        }
+
+        private void VerticalViewBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+            VTKFormRender form = (VTKFormRender)CraftsModeWinForm.Child;
+            vtkRenderer ren = form.renderWindowControl1.RenderWindow.GetRenderers().GetFirstRenderer();
+            vtkRenderWindow renWin = form.renderWindowControl1.RenderWindow;
+
+            vtkCamera camera = ren.GetActiveCamera();
+            camera.SetRoll(form.StoredViewCamera[2].GetRoll());
+            camera.SetPosition(form.StoredViewCamera[2].GetPosition()[0],
+                               form.StoredViewCamera[2].GetPosition()[1],
+                               form.StoredViewCamera[2].GetPosition()[2]);
+            camera.SetFocalPoint(form.StoredViewCamera[2].GetFocalPoint()[0],
+                                 form.StoredViewCamera[2].GetFocalPoint()[1],
+                                 form.StoredViewCamera[2].GetFocalPoint()[2]);
+            camera.SetViewUp(form.StoredViewCamera[2].GetViewUp()[0],
+                             form.StoredViewCamera[2].GetViewUp()[1],
+                             form.StoredViewCamera[2].GetViewUp()[2]);
+
+            renWin.Render();
+        }
 	}
 }

@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              mc:Ignorable="d" 
              x:Class="WpfRibbonApplication1.App"
-             StartupUri="MainWindow.xaml">
+             StartupUri="Welcome.xaml">
     <Application.Resources>
     	<ResourceDictionary>
     		<ResourceDictionary.MergedDictionaries>
