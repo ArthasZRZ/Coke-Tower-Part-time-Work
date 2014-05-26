@@ -108,97 +108,95 @@
                             <Button 
         				x:Name="BuildNewProj" 
         				Margin="0,15,0,31" Background="{x:Null}" 
-        				BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" 
+        				BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" 
         				Height="64" Grid.Column="0"
         				Click="BuildNewProj_Click" HorizontalAlignment="Left" Tag="新建工程" Width="60">
                                 <Image Height="30" VerticalAlignment="Top" Width="30" Source="Images/TabButton/BuildNewProj.png" HorizontalAlignment="Center">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png" Stretch="None"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
                             <Button x:Name="OpenProj" 
-        				            Margin="60,15,0,31" 
-        				            Background="{x:Null}" BorderBrush="{x:Null}" 
-        				              Style="{DynamicResource TabButton}" 
-        				            Height="64" Grid.Column="0"
-        				            Click="OpenProjButton_Click" Tag="打开工程" HorizontalAlignment="Left" Width="60">
+        				Margin="60,15,0,31" 
+        				Background="{x:Null}" BorderBrush="{x:Null}" 
+        				Foreground="White" Style="{DynamicResource TabButton}" 
+        				Height="64" Grid.Column="0"
+        				Click="OpenProjButton_Click" Tag="打开工程" HorizontalAlignment="Left" Width="60">
                                 <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/OpenProj.png" Width="30">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="GridModel" Margin="0,15,0,31" Background="{x:Null}" 
-                                    BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64"
-                                    Tag="网格模型" Grid.Column="1" HorizontalAlignment="Left" Width="60">
+                            <Button x:Name="GridModel" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="网格模型" Grid.Column="1" HorizontalAlignment="Left" Width="60">
                                 <Image Height="30" VerticalAlignment="Top" Width="30" Source="Images/TabButton/GridModel.png">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="SolidTranformModel" Margin="60,15,0,31" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="80" Tag="固化变形模型" HorizontalAlignment="Left">
+                            <Button x:Name="SolidTranformModel" Margin="60,15,0,31" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="80" Tag="固化变形模型" HorizontalAlignment="Left">
                                 <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/SolidTranformModel.png" Width="30">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="CopyAction" Margin="0,15,0,31" Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Tag="复制" Width="40" HorizontalAlignment="Left">
+                            <Button x:Name="CopyAction" Margin="0,15,0,31" Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="复制" Width="40" HorizontalAlignment="Left">
                                 <Image Height="30" VerticalAlignment="Top" Width="30" Source="Images/TabButton/CopyAction.png">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="DeleteAction" Margin="40,15,0,31" Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Tag="删除" Width="40" HorizontalAlignment="Left">
+                            <Button x:Name="DeleteAction" Margin="40,15,0,31" Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="删除" Width="40" HorizontalAlignment="Left">
                                 <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/DeleteAction.png" Width="32.657">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="ReviseAction" Margin="80,15,0,31" Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" HorizontalAlignment="Left" Width="40" Tag="修改">
+                            <Button x:Name="ReviseAction" Margin="80,15,0,31" Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" HorizontalAlignment="Left" Width="40" Tag="修改">
                                 <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/ReviseAction.png" Width="30">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="BuildCoord" Margin="0,17.63,0,0" VerticalAlignment="Top" Grid.Column="3" Height="30" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton Small}" Width="100" Tag="创建坐标系" HorizontalAlignment="Left">
+                            <Button x:Name="BuildCoord" Margin="0,17.63,0,0" VerticalAlignment="Top" Grid.Column="3" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton Small}" Width="100" Tag="创建坐标系" HorizontalAlignment="Left">
                                 <Image Height="20" VerticalAlignment="Top" Source="Images/TabButton/BuildCoord.png" HorizontalAlignment="Left" Width="20">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/SmallIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="LookupCoord" Margin="0,0,0,28.762" Grid.Column="3" VerticalAlignment="Bottom" Height="30" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton Small}" Width="100" Tag="查看坐标系" HorizontalAlignment="Left">
+                            <Button x:Name="LookupCoord" Margin="0,0,0,28.762" Grid.Column="3" VerticalAlignment="Bottom" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton Small}" Width="100" Tag="查看坐标系" HorizontalAlignment="Left">
                                 <Image Height="20" VerticalAlignment="Top" Source="Images/TabButton/LookupCoord.png">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="UnitSys" Margin="0,15,0,31" Grid.Column="4" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Tag="单位体系" Width="60" HorizontalAlignment="Left" d:LayoutOverrides="Width">
+                            <Button x:Name="UnitSys" Margin="0,15,0,31" Grid.Column="4" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="单位体系" Width="60" HorizontalAlignment="Left" d:LayoutOverrides="Width">
                                 <Image Height="30" VerticalAlignment="Top" Width="30" Source="Images/TabButton/UnitSys.png">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="StatisticInfo" Margin="60,15,0,31" Grid.Column="4" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Tag="统计信息" HorizontalAlignment="Left">
+                            <Button x:Name="StatisticInfo" Margin="60,15,0,31" Grid.Column="4" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Tag="统计信息" HorizontalAlignment="Left">
                                 <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/StatisticInfo.png" Width="34.256">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="CompleteCheck" Margin="120,15,0,31" Grid.Column="4" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" HorizontalAlignment="Left" Width="70" Tag="完整性检查">
+                            <Button x:Name="CompleteCheck" Margin="120,15,0,31" Grid.Column="4" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" HorizontalAlignment="Left" Width="70" Tag="完整性检查">
                                 <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/CompleteCheck.png" Width="30">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
                             <Path Data="M7,100.36333 L71.653593,100.36333" HorizontalAlignment="Left" Stretch="Fill" Width="60" Stroke="{DynamicResource 99\,99\,99}" Height="1" VerticalAlignment="Bottom" Margin="8,0,0,15.5"/>
@@ -215,13 +213,13 @@
                             <Button x:Name="OpenProj_Copy" 
         				Margin="120,15,0,31" 
         				Background="{x:Null}" BorderBrush="{x:Null}" 
-        				  Style="{DynamicResource TabButton}" 
+        				Foreground="White" Style="{DynamicResource TabButton}" 
         				Height="64" Grid.Column="0"
-        				Click="SaveProj_Click_1" Tag="保存工程" HorizontalAlignment="Left" Width="60">
-                                <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/OpenProj.png" Width="30">
-                                     
-                                         
-                                    
+        				Click="OpenProjButton_Click" Tag="保存工程" HorizontalAlignment="Left" Width="60">
+                                <Image Height="30" VerticalAlignment="Top" Source="SaveProj.png" Width="30">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
                             <Path Data="M7,100.36333 L71.653593,100.36333" HorizontalAlignment="Left" Stretch="Fill" Width="60" Stroke="{DynamicResource 99\,99\,99}" Height="1" VerticalAlignment="Bottom" Margin="8,0,0,15.5"/>
@@ -243,182 +241,185 @@
                             </Grid.ColumnDefinitions>
                             <Button x:Name="导入模型" 
         				Margin="70,15,0,31" Background="{x:Null}" 
-        				BorderBrush="{x:Null}"   
+        				BorderBrush="{x:Null}" Foreground="White" 
         				Style="{DynamicResource TabButton}" Height="64" Width="60"
         				Click="ImportModel_Click" Tag="导入模型" HorizontalAlignment="Left" d:LayoutOverrides="GridBox">
                                 <Image Height="30" Source="Images/TabButton/drmx.png" HorizontalAlignment="Left" Width="30">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="BuildCoord_Copy" Margin="130,18,0,0" VerticalAlignment="Top" Height="30" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton Small}" Tag="主体材料" Width="88" HorizontalAlignment="Left">
+                            <Button x:Name="BuildCoord_Copy" Margin="130,18,0,0" VerticalAlignment="Top" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton Small}" Tag="主体材料" Width="88" HorizontalAlignment="Left">
                                 <Image Source="Images/TabButton/ztcl.png" Width="20" d:LayoutOverrides="HorizontalAlignment">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/SmallIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="LookupCoord_Copy" Margin="130,0,0,29" VerticalAlignment="Bottom" Height="30" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton Small}" Tag="焊缝材料" Width="88" HorizontalAlignment="Left">
+                            <Button x:Name="LookupCoord_Copy" Margin="130,0,0,29" VerticalAlignment="Bottom" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton Small}" Tag="焊缝材料" Width="88" HorizontalAlignment="Left">
                                 <Image Height="20" VerticalAlignment="Top" Source="Images/TabButton/hfcl.png" Width="20" d:LayoutOverrides="HorizontalAlignment">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="BuildCoord_Copy1" Margin="218,18,0,0" VerticalAlignment="Top" Height="30" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton Small}" Width="88" HorizontalAlignment="Left" Tag="焦炭材料">
+                            <Button x:Name="BuildCoord_Copy1" Margin="218,18,0,0" VerticalAlignment="Top" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton Small}" Width="88" HorizontalAlignment="Left" Tag="焦炭材料">
                                 <Image Source="Images/TabButton/jtcl.png">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/SmallIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="LookupCoord_Copy1" Margin="218,0,0,29" VerticalAlignment="Bottom" Height="30" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton Small}" Width="88" HorizontalAlignment="Left" Tag="保温材料">
+                            <Button x:Name="LookupCoord_Copy1" Margin="218,0,0,29" VerticalAlignment="Bottom" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton Small}" Width="88" HorizontalAlignment="Left" Tag="保温材料">
                                 <Image Height="20" VerticalAlignment="Top" Source="Images/TabButton/bwcl.png">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
                             <Button x:Name="BuildCoord_Copy2" Margin="0,18,0,0" VerticalAlignment="Top" 
                                     Height="30" Background="{x:Null}" BorderBrush="{x:Null}" 
-                                      Style="{DynamicResource TabButton Small}" 
+                                    Foreground="White" Style="{DynamicResource TabButton Small}" 
                                     Grid.Column="1" Tag="油气预热" HorizontalAlignment="Left" Width="88"
                                     Click="WorkingStatusButtonClick">
                                 <Image Source="Images/TabButton/yqyr.png">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/SmallIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
                             <Button x:Name="LookupCoord_Copy2" Margin="0,0,0,29" 
                                     VerticalAlignment="Bottom" Height="30" Background="{x:Null}" 
-                                    BorderBrush="{x:Null}"   
+                                    BorderBrush="{x:Null}" Foreground="White" 
                                     Style="{DynamicResource TabButton Small}" Grid.Column="1" Tag="进油结焦" HorizontalAlignment="Left" Width="88">
                                 <Image Height="20" VerticalAlignment="Top" Source="Images/TabButton/jyjj.png">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="BuildCoord_Copy3" Margin="88,18,0,0" VerticalAlignment="Top" Height="30" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton Small}" Grid.Column="1" Width="88" Tag="大小吹汽" HorizontalAlignment="Left">
+                            <Button x:Name="BuildCoord_Copy3" Margin="88,18,0,0" VerticalAlignment="Top" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton Small}" Grid.Column="1" Width="88" Tag="大小吹汽" HorizontalAlignment="Left">
                                 <Image Source="Images/TabButton/dxcq.png" Width="20">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/SmallIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
                             <Button x:Name="LookupCoord_Copy3" Margin="88,0,0,29" 
                                     VerticalAlignment="Bottom" Height="30" Background="{x:Null}" 
-                                    BorderBrush="{x:Null}"   Style="{DynamicResource TabButton Small}"
+                                    BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton Small}"
                                     Grid.Column="1" Width="88" Tag="给水冷焦" HorizontalAlignment="Left">
                                 <Image Height="20" VerticalAlignment="Top" Source="Images/TabButton/gslj.png" Width="20">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
                             <Button x:Name="导入模型_Copy" Margin="176,15,0,31" Background="{x:Null}" 
-                                    BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" 
+                                    BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" 
                                     Height="64" Grid.Column="1" Tag="工况" HorizontalAlignment="Left" Width="40"
                                     Click="WorkingStatusAnalysis_Click_1">
                                 <Image Height="30" Source="Images/TabButton/gk.png" Width="30" Tag="" Margin="0">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
                             <Button x:Name="RunModelConfigure" Margin="80,15,0,31" 
                                     Background="{x:Null}" BorderBrush="{x:Null}" 
-                                      Style="{DynamicResource TabButton}" 
+                                    Foreground="White" Style="{DynamicResource TabButton}" 
                                     Height="64" Width="60" Grid.Column="2" Tag="运行设置"
                                     HorizontalAlignment="Left" Click="RunModelConfigure_Click">
                                 <Image Height="30" Source="Images/TabButton/yxsz.png" Width="29">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
                             <Button x:Name="RunModelBtn" Margin="140,15,0,31" Background="{x:Null}"
-                                    BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" 
+                                    BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" 
                                     Height="64" Width="40" Grid.Column="2" Tag="运行" HorizontalAlignment="Left"
                                     Click="RunModel_Click">
                                 <Image Height="30" Source="Images/TabButton/yx.png" Width="30">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="CompleteCheck_Copy" Margin="0,15,78,31" Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Tag="工艺参数检查" HorizontalAlignment="Left" Width="80">
+                            <Button x:Name="CompleteCheck_Copy" Margin="0,15,78,31" Grid.Column="2" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="工艺参数检查" HorizontalAlignment="Left" Width="80">
                                 <Image Height="30" Source="Images/TabButton/gycsjc.png" Width="30">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="CompleteCheck_Copy1" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" HorizontalAlignment="Left" Width="70" Grid.Column="0" Tag="模型库引入">
+                            <Button x:Name="CompleteCheck_Copy1" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" HorizontalAlignment="Left" Width="70" Grid.Column="0" Tag="模型库引入">
                                 <Image Height="30" Source="Images/TabButton/mxkyr.png" HorizontalAlignment="Left" Width="30" Tag="">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
                             <Button x:Name="CompleteCheck_Copy2" 
         				Margin="0,15,0,31" Background="{x:Null}" 
-        				BorderBrush="{x:Null}"   
+        				BorderBrush="{x:Null}" Foreground="White" 
         				Style="{DynamicResource TabButton}" 
         				Height="64" Grid.Column="3"
         				Click="VirtualHeat_Click_1" Tag="虚拟热电隅" HorizontalAlignment="Left" Width="70">
                                 <Image Height="30" Source="Images/TabButton/xnrdy.png" Width="30">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="CompleteCheck_Copy3" Margin="70,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Grid.Column="3" Width="100" Tag="虚拟应力/应变片" HorizontalAlignment="Left">
+                            <Button x:Name="CompleteCheck_Copy3" Margin="70,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Grid.Column="3" Width="100" Tag="虚拟应力/应变片" HorizontalAlignment="Left">
                                 <Image Height="30" Source="Images/TabButton/xnylybp.png" Width="30">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="导入模型_Copy3" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="40" Grid.Column="4" Tag="表格" HorizontalAlignment="Left" d:LayoutOverrides="GridBox">
+                            <Button x:Name="导入模型_Copy3" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="40" Grid.Column="4" Tag="表格" HorizontalAlignment="Left" d:LayoutOverrides="GridBox">
                                 <Image Height="30" Source="Images/TabButton/table.png" Width="30">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="导入模型_Copy4" Margin="40,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="40" Grid.Column="4" Tag="云图" HorizontalAlignment="Left" d:LayoutOverrides="GridBox">
+                            <Button x:Name="导入模型_Copy4" Margin="40,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="40" Grid.Column="4" Tag="云图" HorizontalAlignment="Left" d:LayoutOverrides="GridBox">
                                 <Image Height="30" Source="Images/TabButton/yt.png" Width="29">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="导入模型_Copy5" Margin="80,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="4" Tag="温度历程" HorizontalAlignment="Left" d:LayoutOverrides="GridBox">
+                            <Button x:Name="导入模型_Copy5" Margin="80,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="4" Tag="温度历程" HorizontalAlignment="Left" d:LayoutOverrides="GridBox">
                                 <Image Height="30" Source="Images/TabButton/wdlc.png" Width="30">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="导入模型_Copy6" Margin="140,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="50" Grid.Column="4" Tag="变形图" HorizontalAlignment="Left" d:LayoutOverrides="GridBox">
+                            <Button x:Name="导入模型_Copy6" Margin="140,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="50" Grid.Column="4" Tag="变形图" HorizontalAlignment="Left" d:LayoutOverrides="GridBox">
                                 <Image Height="30" Source="Images/TabButton/bxt.png" Width="30">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="导入模型_Copy7" Margin="190,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="40" Grid.Column="4" Tag="动画" HorizontalAlignment="Left" d:LayoutOverrides="GridBox">
+                            <Button x:Name="导入模型_Copy7" Margin="190,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="40" Grid.Column="4" Tag="动画" HorizontalAlignment="Left" d:LayoutOverrides="GridBox">
                                 <Image Height="30" Source="Images/TabButton/dh.png" Width="30">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
-                            <Button x:Name="导入模型_Copy8" Margin="230,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="40" Grid.Column="4" Tag="报告" HorizontalAlignment="Left" d:LayoutOverrides="GridBox">
+                            <Button x:Name="导入模型_Copy8" Margin="230,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="40" Grid.Column="4" Tag="报告" HorizontalAlignment="Left" d:LayoutOverrides="GridBox">
                                 <Image Height="30" Source="Images/TabButton/report.png" Width="30">
-                                     
-                                         
-                                    
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                                    </Image.OpacityMask>
                                 </Image>
                             </Button>
                             <TextBlock Margin="0,0,0,10" TextWrapping="Wrap" VerticalAlignment="Bottom" Foreground="{DynamicResource Text Grey}" Height="15" HorizontalAlignment="Center"><Run Language="zh-cn" Text="建模"/></TextBlock>
@@ -448,102 +449,102 @@
                         <ColumnDefinition Width="120"/>
                         <ColumnDefinition Width="240"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="导入模型_Copy9" Margin="80,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="50" Tag="热电隅" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy9" Margin="80,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="50" Tag="热电隅" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/rdy.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="CompleteCheck_Copy5" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Tag="应力/应变片" Width="80" HorizontalAlignment="Left">
+                    <Button x:Name="CompleteCheck_Copy5" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="应力/应变片" Width="80" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/ylybp.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy10" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="50" Grid.Column="1" Tag="全站仪" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy10" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="50" Grid.Column="1" Tag="全站仪" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/qzy.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy11" Margin="50,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="1" Tag="状态检查" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy11" Margin="50,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="1" Tag="状态检查" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/ztjc.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy12" Margin="110,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="1" Tag="启动监控" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy12" Margin="110,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="1" Tag="启动监控" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/qdjk.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy13" Margin="170,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="1" Tag="暂停监控" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy13" Margin="170,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="1" Tag="暂停监控" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/ztjk.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy14" Margin="230,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="1" Tag="停止监控" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy14" Margin="230,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="1" Tag="停止监控" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/tzjk.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy15" Margin="290,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="1" Tag="数据比对" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy15" Margin="290,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="1" Tag="数据比对" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/sjbd.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy16" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="2" Tag="输出设置" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy16" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="2" Tag="输出设置" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/scsz.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy17" Margin="60,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="2" Tag="警告设置" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy17" Margin="60,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="2" Tag="警告设置" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/jgsz.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy18" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="3" Tag="历史数据" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy18" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="3" Tag="历史数据" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/lssj.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy19" Margin="60,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="3" Tag="数据处理" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy19" Margin="60,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="3" Tag="数据处理" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/sjcl.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy20" Margin="120,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="3" Tag="数据分析" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy20" Margin="120,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="3" Tag="数据分析" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/sjfx.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy21" Margin="180,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="3" Tag="数据查找" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy21" Margin="180,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="3" Tag="数据查找" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/sjcz.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
                     <TextBlock Margin="0,0,0,9.999" TextWrapping="Wrap" VerticalAlignment="Bottom" Foreground="{DynamicResource Text Grey}" Height="15" d:LayoutOverrides="Width" HorizontalAlignment="Center"><Run Language="zh-cn" Text="传感器布置"/></TextBlock>
@@ -570,95 +571,95 @@
                         <ColumnDefinition Width="80"/>
                         <ColumnDefinition Width="120"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="导入模型_Copy23" Margin="130,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Tag="高温蠕变" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy23" Margin="130,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Tag="高温蠕变" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/gwrb.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy24" Margin="190,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="40" Tag="耦合" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy24" Margin="190,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="40" Tag="耦合" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/oh.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy25" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="50" Grid.Column="1" Tag="硫腐蚀" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy25" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="50" Grid.Column="1" Tag="硫腐蚀" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/lfs.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy32" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Grid.Column="4" Tag="压力容器规范" HorizontalAlignment="Left" Width="80">
+                    <Button x:Name="导入模型_Copy32" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Grid.Column="4" Tag="压力容器规范" HorizontalAlignment="Left" Width="80">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/ylrqgf.png" Width="31">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy33" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="5" Tag="报告模板" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment">
+                    <Button x:Name="导入模型_Copy33" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="5" Tag="报告模板" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/reporttemplate.png" Width="31">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy34" Margin="60,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="5" Tag="报告生成" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy34" Margin="60,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Grid.Column="5" Tag="报告生成" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/createreport.png" Width="30.228">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="BuildNewProj_Copy" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" HorizontalAlignment="Left" d:LayoutOverrides="Width" Tag="低周疲劳">
+                    <Button x:Name="BuildNewProj_Copy" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" HorizontalAlignment="Left" d:LayoutOverrides="Width" Tag="低周疲劳">
                         <Image Height="30" VerticalAlignment="Top" Width="30" Source="Images/TabButton/dzpl.png">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png" Stretch="None"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="CompleteCheck_Copy4" Margin="60,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Tag="弹塑性损伤" Width="70" HorizontalAlignment="Left">
+                    <Button x:Name="CompleteCheck_Copy4" Margin="60,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="弹塑性损伤" Width="70" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/tsxss.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="CompleteCheck_Copy6" Margin="50,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Grid.Column="1" Tag="环烷酸腐蚀" HorizontalAlignment="Left" Width="70">
+                    <Button x:Name="CompleteCheck_Copy6" Margin="50,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Grid.Column="1" Tag="环烷酸腐蚀" HorizontalAlignment="Left" Width="70">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/hwsfs.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="CompleteCheck_Copy8" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Grid.Column="2" Tag="塔身热棘轮效应" Width="100" HorizontalAlignment="Left">
+                    <Button x:Name="CompleteCheck_Copy8" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Grid.Column="2" Tag="塔身热棘轮效应" Width="100" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/tsrjlxy.png" Width="30">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="BuildCoord_Copy4" Margin="0,14.63,0,0" VerticalAlignment="Top" Grid.Column="3" Height="20" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton Small}" Width="115" Tag="高温低周疲劳" HorizontalAlignment="Left">
+                    <Button x:Name="BuildCoord_Copy4" Margin="0,14.63,0,0" VerticalAlignment="Top" Grid.Column="3" Height="20" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton Small}" Width="115" Tag="高温低周疲劳" HorizontalAlignment="Left">
                         <Image Height="20" VerticalAlignment="Top" Source="Images/TabButton/gwdzpl.png" HorizontalAlignment="Left" Width="20">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/SmallIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="LookupCoord_Copy4" Margin="0,0,0,31.762" Grid.Column="3" VerticalAlignment="Bottom" Height="20" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton Small}" Width="115" Tag="耦合理论验证" HorizontalAlignment="Left">
+                    <Button x:Name="LookupCoord_Copy4" Margin="0,0,0,31.762" Grid.Column="3" VerticalAlignment="Bottom" Height="20" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton Small}" Width="115" Tag="耦合理论验证" HorizontalAlignment="Left">
                         <Image Height="20" VerticalAlignment="Top" Source="Images/TabButton/ohllyz.png">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="LookupCoord_Copy5" Margin="0,36.238,0,53.762" Grid.Column="3" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton Small}" Width="115" Tag="材料蠕变损伤" HorizontalAlignment="Left" Height="20">
+                    <Button x:Name="LookupCoord_Copy5" Margin="0,36.238,0,53.762" Grid.Column="3" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton Small}" Width="115" Tag="材料蠕变损伤" HorizontalAlignment="Left" Height="20">
                         <Image Height="20" VerticalAlignment="Top" Source="Images/TabButton/clrbss.png">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
                     <TextBlock Margin="0,0,0,10" TextWrapping="Wrap" VerticalAlignment="Bottom" Foreground="{DynamicResource Text Grey}" Height="15" HorizontalAlignment="Center"><Run Language="zh-cn" Text="可靠性分析"/></TextBlock>
@@ -690,116 +691,116 @@
                         <ColumnDefinition Width="210"/>
                         <ColumnDefinition Width="138"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="导入模型_Copy22" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="40" Tag="登录" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy22" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="40" Tag="登录" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/login.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy26" Margin="40,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Tag="注销" HorizontalAlignment="Left" Width="40">
+                    <Button x:Name="导入模型_Copy26" Margin="40,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="注销" HorizontalAlignment="Left" Width="40">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/logout.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy27" Margin="80,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="40" Tag="维护" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy27" Margin="80,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="40" Tag="维护" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/wh.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy28" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Tag="部门维护" HorizontalAlignment="Left" Grid.Column="1" d:LayoutOverrides="HorizontalAlignment">
+                    <Button x:Name="导入模型_Copy28" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Tag="部门维护" HorizontalAlignment="Left" Grid.Column="1" d:LayoutOverrides="HorizontalAlignment">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/bmwh.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy29" Margin="60,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="40" Tag="用户" HorizontalAlignment="Left" Grid.Column="1">
+                    <Button x:Name="导入模型_Copy29" Margin="60,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="40" Tag="用户" HorizontalAlignment="Left" Grid.Column="1">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/user.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy30" Margin="100,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Tag="用户组" Grid.Column="1" Width="50" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy30" Margin="100,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="用户组" Grid.Column="1" Width="50" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/usergroup.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy31" Margin="150,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Tag="权限" Grid.Column="1" Width="40" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy31" Margin="150,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="权限" Grid.Column="1" Width="40" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/qx.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy35" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Tag="版本管理" Grid.Column="2" Width="60" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment">
+                    <Button x:Name="导入模型_Copy35" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="版本管理" Grid.Column="2" Width="60" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/bbgl.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy36" Margin="60,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Tag="任务管理" Grid.Column="2" Width="60" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy36" Margin="60,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="任务管理" Grid.Column="2" Width="60" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/rwgl.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy37" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Tag="材料库" Grid.Column="3" Width="50" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment">
+                    <Button x:Name="导入模型_Copy37" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="材料库" Grid.Column="3" Width="50" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/clk.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy38" Margin="50,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Tag="连接件库" Grid.Column="3" Width="60" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment">
+                    <Button x:Name="导入模型_Copy38" Margin="50,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="连接件库" Grid.Column="3" Width="60" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/ljjk.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy39" Margin="110,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Tag="曲线库" Grid.Column="3" Width="50" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy39" Margin="110,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="曲线库" Grid.Column="3" Width="50" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/qxk.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy40" Margin="160,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Tag="型材库" Grid.Column="3" Width="50" HorizontalAlignment="Left">
+                    <Button x:Name="导入模型_Copy40" Margin="160,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="型材库" Grid.Column="3" Width="50" HorizontalAlignment="Left">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/xck.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy41" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Tag="服务器配置" Grid.Column="4" Width="70" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment">
+                    <Button x:Name="导入模型_Copy41" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Tag="服务器配置" Grid.Column="4" Width="70" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/fwqpz.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="BuildCoord_Copy5" Margin="70,18,0,0" VerticalAlignment="Top" Height="30" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton Small}" Tag="日志" Width="68" HorizontalAlignment="Left" Grid.Column="4" d:LayoutOverrides="HorizontalAlignment">
+                    <Button x:Name="BuildCoord_Copy5" Margin="70,18,0,0" VerticalAlignment="Top" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton Small}" Tag="日志" Width="68" HorizontalAlignment="Left" Grid.Column="4" d:LayoutOverrides="HorizontalAlignment">
                         <Image Source="Images/TabButton/rz.png" Width="20" d:LayoutOverrides="HorizontalAlignment">
-                             
-                                 
-                         
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/SmallIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="LookupCoord_Copy6" Margin="70,0,0,29" VerticalAlignment="Bottom" Height="30" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton Small}" Tag="警告" Width="68" HorizontalAlignment="Left" Grid.Column="4" d:LayoutOverrides="HorizontalAlignment">
+                    <Button x:Name="LookupCoord_Copy6" Margin="70,0,0,29" VerticalAlignment="Bottom" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton Small}" Tag="警告" Width="68" HorizontalAlignment="Left" Grid.Column="4" d:LayoutOverrides="HorizontalAlignment">
                         <Image Height="20" VerticalAlignment="Top" Source="Images/TabButton/jg.png" Width="20" d:LayoutOverrides="HorizontalAlignment">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
                     <TextBlock Margin="0,0,0,10" TextWrapping="Wrap" VerticalAlignment="Bottom" Foreground="{DynamicResource Text Grey}" Height="15" HorizontalAlignment="Center"><Run Language="zh-cn" Text="访问控制"/></TextBlock>
@@ -825,49 +826,49 @@
                         <ColumnDefinition Width="225"/>
                         <ColumnDefinition Width="160"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="BuildCoord_Copy6" Margin="0,14.63,0,0" VerticalAlignment="Top" Height="20" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton Small}" Width="225" Tag="焦炭塔数值模拟仿真分析操作说明" HorizontalAlignment="Left">
+                    <Button x:Name="BuildCoord_Copy6" Margin="0,14.63,0,0" VerticalAlignment="Top" Height="20" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton Small}" Width="225" Tag="焦炭塔数值模拟仿真分析操作说明" HorizontalAlignment="Left">
                         <Image Height="20" VerticalAlignment="Top" Source="Images/TabButton/sc.png" HorizontalAlignment="Left" Width="20">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/SmallIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="LookupCoord_Copy7" Margin="0,0,0,31.762" VerticalAlignment="Bottom" Height="20" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton Small}" Width="225" Tag="焦炭塔安全评估模块操作说明" HorizontalAlignment="Left">
+                    <Button x:Name="LookupCoord_Copy7" Margin="0,0,0,31.762" VerticalAlignment="Bottom" Height="20" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton Small}" Width="225" Tag="焦炭塔安全评估模块操作说明" HorizontalAlignment="Left">
                         <Image Height="20" VerticalAlignment="Top" Source="Images/TabButton/sc.png">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="LookupCoord_Copy8" Margin="0,36.238,0,53.762" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton Small}" Width="225" Tag="焦炭塔实现在线仿真模拟操作说明" HorizontalAlignment="Left" Height="20">
+                    <Button x:Name="LookupCoord_Copy8" Margin="0,36.238,0,53.762" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton Small}" Width="225" Tag="焦炭塔实现在线仿真模拟操作说明" HorizontalAlignment="Left" Height="20">
                         <Image Height="20" VerticalAlignment="Top" Source="Images/TabButton/sc.png">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy42" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Tag="产品信息" HorizontalAlignment="Left" Grid.Column="1">
+                    <Button x:Name="导入模型_Copy42" Margin="0,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Tag="产品信息" HorizontalAlignment="Left" Grid.Column="1">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/productinfo.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
                     <TextBlock Margin="0,0,0,10" TextWrapping="Wrap" VerticalAlignment="Bottom" Foreground="{DynamicResource Text Grey}" Height="15" HorizontalAlignment="Center"><Run Language="zh-cn" Text="使用手册"/></TextBlock>
                     <Path Data="M7,100.36333 L71.653593,100.36333" Stretch="Fill" Stroke="{DynamicResource 99\,99\,99}" Height="1" VerticalAlignment="Bottom" Margin="8,0,0,15.5" HorizontalAlignment="Left" Width="76.5"/>
                     <Path Data="M7,100.36333 L71.653593,100.36333" Stretch="Fill" Stroke="{DynamicResource 99\,99\,99}" Height="1" VerticalAlignment="Bottom" Margin="0,0,8,15.5" HorizontalAlignment="Right" Width="76.5"/>
-                    <Button x:Name="导入模型_Copy43" Margin="60,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="60" Tag="技术支持" HorizontalAlignment="Left" Grid.Column="1">
+                    <Button x:Name="导入模型_Copy43" Margin="60,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="60" Tag="技术支持" HorizontalAlignment="Left" Grid.Column="1">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/support.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
-                    <Button x:Name="导入模型_Copy44" Margin="120,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}"   Style="{DynamicResource TabButton}" Height="64" Width="40" Tag="关于" HorizontalAlignment="Left" Grid.Column="1">
+                    <Button x:Name="导入模型_Copy44" Margin="120,15,0,31" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Style="{DynamicResource TabButton}" Height="64" Width="40" Tag="关于" HorizontalAlignment="Left" Grid.Column="1">
                         <Image Height="30" VerticalAlignment="Top" Source="Images/TabButton/about.png" Width="30.18">
-                             
-                                 
-                            
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="Images/LargeIcon.png"/>
+                            </Image.OpacityMask>
                         </Image>
                     </Button>
                     <TextBlock Margin="0,0,0,10" TextWrapping="Wrap" VerticalAlignment="Bottom" Foreground="{DynamicResource Text Grey}" Height="15" HorizontalAlignment="Center"><Run Language="zh-cn" Text="使用手册"/></TextBlock>
@@ -888,24 +889,32 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="140"/>
                 </Grid.RowDefinitions>
-                <WindowsFormsHost Grid.Row="0" x:Name="winform" Margin="0,0,0,5"/>
+                <WindowsFormsHost Grid.Row="0" x:Name="winform" Padding="5" Margin="0,0,0,52"/>
+                <Grid Height="42" Margin="0,0,0,10" VerticalAlignment="Bottom" Background="{DynamicResource 61\,61\,61}">
+                	<Button HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="80" Style="{DynamicResource ButtonWithImg}" Tag="正视图">
+                		<Image Source="FrontView.png"/>
+                	</Button>
+                	<Button HorizontalAlignment="Left" Margin="100,0,0,10" VerticalAlignment="Bottom" Width="80" Style="{DynamicResource ButtonWithImg}" Tag="侧视图">
+                		<Image Source="SideView.png"/>
+                	</Button>
+                	<Button Margin="190,0,0,10" VerticalAlignment="Bottom" Style="{DynamicResource ButtonWithImg}" Tag="俯视图" Width="80" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment">
+                		<Image Source="VerticalView.png"/>
+                	</Button>
+                </Grid>
                 
                 <Grid x:Name="WorkSpaceNoticeGrid" Grid.Row="1" Grid.Column="0">
-                    <DataGrid x:Name ="gridNoticeData" AutoGenerateColumns="False" Background="{DynamicResource 61\,61\,61}">
+                    <DataGrid x:Name ="gridNoticeData" AutoGenerateColumns="True" Background="{DynamicResource 61\,61\,61}">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="序号" Width="175"
-                                                Binding="{Binding Path=id}"/>
-                            <DataGridTextColumn Header="运行信息" Width="*"
-                                                Binding="{Binding Path=info}"/>
+                            <DataGridTextColumn Header="序号" Width="175" Foreground="{DynamicResource 75\,75\,75}"/>
+                            <DataGridTextColumn Header="运行信息" Width="*" Foreground="{DynamicResource 75\,75\,75}"/>
                         </DataGrid.Columns>
-                        
                     </DataGrid>
                 </Grid>
             </Grid>
 
             <Grid Width="280" Background="{DynamicResource 61\,61\,61}" Grid.Column="1" HorizontalAlignment="Right">
                 <Grid x:Name="模型生成" Background="{DynamicResource 99\,99\,99}" Height="20" VerticalAlignment="Top" Margin="0" Width="280">
-                    <TextBlock Margin="0" TextWrapping="Wrap" d:LayoutOverrides="Height" HorizontalAlignment="Center" VerticalAlignment="Center"  ><Run Language="zh-cn" Text="模型生成"/></TextBlock>
+                    <TextBlock Margin="0" TextWrapping="Wrap" d:LayoutOverrides="Height" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource text color}"><Run Language="zh-cn" Text="模型生成"/></TextBlock>
                 </Grid>
                 <Grid x:Name="菜单名" HorizontalAlignment="Left" Height="85" Margin="10,31,0,0" VerticalAlignment="Top" Width="55">
                     <Grid.RowDefinitions>
@@ -936,7 +945,7 @@
                     Height="20" Style="{DynamicResource ComboBoxStyle Revised}"
                     SelectedIndex="0">
                     <ComboBoxItem Content="填充" Background="{DynamicResource 61\,61\,61}"/>
-                    <ComboBoxItem Content="单元显示" Background="{DynamicResource 61\,61\,61}"/>
+                    <ComboBoxItem Content="轮廓" Background="{DynamicResource 61\,61\,61}"/>
                 </ComboBox>
                 <ComboBox 
                     x:Name="BuildPhaseBox" Margin="75,89,10,0" 
@@ -951,64 +960,45 @@
                     <ComboBoxItem Content="给水冷焦阶段" Background="{DynamicResource 61\,61\,61}"/>
                 </ComboBox>
                 <TreeView x:Name="CloudPicTreeView" Margin="10,130,10,40" BorderBrush="{x:Null}" Background="{DynamicResource 75\,75\,75}"
-                          TreeViewItem.Selected="TreeViewSelectMethod">
+                          TreeViewItem.Selected="TreeView_Selected_1">
            
                     <TreeViewItem Header="温度数据" IsExpanded="True" Foreground="{DynamicResource text color}">
                         <TreeViewItem Header="Temperature" Foreground="{DynamicResource text color}"/>
                     </TreeViewItem>
                     <TreeViewItem Header="变形数据" IsExpanded="True" Foreground="{DynamicResource text color}">
-                        <TreeViewItem Header="1 X-Component of Displacement" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="2 Y-Component of Displacement" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="3 Z-Component of Displacement" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="4 Displacement Vector Sum" Foreground="{DynamicResource text color}"/>
+                        <TreeViewItem Header="X-Component of Displacement" Foreground="{DynamicResource text color}"/>
+                        <TreeViewItem Header="Y-Component of Displacement" Foreground="{DynamicResource text color}"/>
+                        <TreeViewItem Header="Z-Component of Displacement" Foreground="{DynamicResource text color}"/>
+
                     </TreeViewItem>
                     <TreeViewItem Header="应力数据" IsExpanded="True" Foreground="{DynamicResource text color}">
-                        <TreeViewItem Header="1 X-Component of Stress" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="2 Y-Component of Stress" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="3 Z-Component of Stress" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="4 XY Shear Stress" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="5 YZ Shear Stress" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="6 XZ Shear Stress" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="7 1st Principle Stree" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="8 2nd Principle Stree" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="9 3rd Principle Stree" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="10 Stress Intensity" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="11 Von Mises Stress" Foreground="{DynamicResource text color}"/>
+                        <TreeViewItem Header="X-Component of Stress" Foreground="{DynamicResource text color}"/>
+                        <TreeViewItem Header="Y-Component of Stress" Foreground="{DynamicResource text color}"/>
+                        <TreeViewItem Header="Z-Component of Stress" Foreground="{DynamicResource text color}"/>
                     </TreeViewItem>
                     <TreeViewItem Header="弹性应变数据" IsExpanded="True" Foreground="{DynamicResource text color}">
-                        <TreeViewItem Header="1 X-Component of Total Mechanical Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="2 Y-Component of Total Mechanical Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="3 Z-Component of Total Mechanical Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="4 XY Shear Mechanical Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="5 YZ Shear Mechanical Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="6 XZ Shear Mechanical Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="7 1st Principle Mechanical Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="8 2nd Principle Mechanical Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="9 3rd Principle Mechanical Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="10 Mechanical Strain Intensity" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="11 Von Mises Mechanical Strain" Foreground="{DynamicResource text color}"/>
+                        <TreeViewItem Header="X-Component of Total Machine Strain" Foreground="{DynamicResource text color}"/>
+                        <TreeViewItem Header="Y-Component of Total Machine Strain" Foreground="{DynamicResource text color}"/>
+                        <TreeViewItem Header="Z-Component of Total Machine Strain" Foreground="{DynamicResource text color}"/>
                     </TreeViewItem>
                     <TreeViewItem Header="塑性应变数据" IsExpanded="True" Foreground="{DynamicResource text color}">
-                        <TreeViewItem Header="1 X-Component of Total Plastic Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="2 Y-Component of Total Plastic Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="3 Z-Component of Total Plastic Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="4 XY Shear Plastic Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="5 YZ Shear Plastic Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="6 XZ Shear Plastic Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="7 1st Principle Plastic Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="8 2nd Principle Plastic Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="9 3rd Principle Plastic Strain" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="10 Plastic Strain Intensity" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="11 Von Mises Plastic Strain" Foreground="{DynamicResource text color}"/>
+                        <TreeViewItem Header="X-Component of Total Machine Plastic Strain" Foreground="{DynamicResource text color}"/>
+                        <TreeViewItem Header="Y-Component of Total Machine Plastic Strain" Foreground="{DynamicResource text color}"/>
+                        <TreeViewItem Header="Z-Component of Total Machine Plastic Strain" Foreground="{DynamicResource text color}"/>
                     </TreeViewItem>
                     
                 </TreeView>
-                <Button Content="显示模型" HorizontalAlignment="Right" Margin="0,0,10,10" 
+                <Button Content="生成模型" HorizontalAlignment="Right" Margin="0,0,10,10" 
                         VerticalAlignment="Bottom" Width="100" Background="{DynamicResource 75\,75\,75}" 
-                          Height="21" Style="{DynamicResource Button Simple}"
+                        Foreground="{DynamicResource text color}" Height="21" Style="{DynamicResource Button Simple}"
                         Click="ComfirmSettingButton_Click_1"/>
-                
-                <Button Content="重置" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="50" Background="{DynamicResource 75\,75\,75}"   Height="21" Style="{DynamicResource Button Simple}"/>
+                <Button Content="导入新方案" HorizontalAlignment="Left" Margin="70,0,0,10" 
+                        VerticalAlignment="Bottom" Width="70"
+                        Background="{DynamicResource 75\,75\,75}" 
+                        Foreground="{DynamicResource text color}" Height="21" 
+                        Style="{DynamicResource Button Simple}"
+                        Click="Button_Click_2"/>
+                <Button Content="重置" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="50" Background="{DynamicResource 75\,75\,75}" Foreground="{DynamicResource text color}" Height="21" Style="{DynamicResource Button Simple}"/>
             </Grid>
         </Grid>
     </Grid>

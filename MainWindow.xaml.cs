@@ -47,12 +47,13 @@ namespace WpfRibbonApplication1
             paras.Width = winform.Width;
             paras.Height = winform.Height;
 
-            VTKFormRender form = new VTKFormRender(paras, null, MainWindow.WorkSpaceInstance);
+            Form1 form = new Form1(paras);
             form.TopLevel = false;
             winform.Child = form;
         }
-               
-        //Communication with the file system
+        
+        #region Oridinary functions
+        // This is a test function
         public void OpenProjButton_Click(object sender, RoutedEventArgs e)
         {
             // TODO: Add event handler implementation here.
@@ -62,7 +63,6 @@ namespace WpfRibbonApplication1
             {
                 //
                 string WorkSpaceDir = folderBrowserDialog.SelectedPath;
-               
                 using (var odb = OdbFactory.Open(WorkSpaceDir + @"\dbInstance.ndb"))
                 {
                     var queryWorkspaceInfo = odb.Query<WorkSpaceClass>();
@@ -72,26 +72,9 @@ namespace WpfRibbonApplication1
                         //System.Windows.MessageBox.Show(wkspace.NLIST_FILENAME);
                         WorkSpaceInstance = new WorkSpaceClass(wkspace.NLIST_FILENAME, wkspace.ELIST_FILENAME, wkspace.ROOT_DIR, wkspace.DBNAME,
                             wkspace.TowerModelInstance, wkspace.HeatDoublerInstances, wkspace.Category);
-
-                        //Test Import Successful
-                        
                     }
                 }
             }
-        }
-        private void SaveProj_Click_1(object sender, RoutedEventArgs e)
-        {
-            //The "save project" routine is based on the directory
-            //Delete the old database -- This is not optimized
-            OdbFactory.Delete(WorkSpaceInstance.DBNAME);
-            //Store the WorkSpaceInstance in the database
-            //MessageBox.Show(WorkSpaceInstance.DBNAME);
-            using (var odb = OdbFactory.Open(WorkSpaceInstance.DBNAME))
-            {
-                odb.Store(WorkSpaceInstance);
-                //MessageBox.Show(WorkSpaceInstance.Category.CategoryName);
-            }
-
         }
 
         private void BuildNewProj_Click(object sender, RoutedEventArgs e)
@@ -104,7 +87,29 @@ namespace WpfRibbonApplication1
             ImportModelWindow.GetInstance().ShowDialog();
         }
 
-       
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            //_3DModel.GetInstance().ShowDialog();
+            is3Dready = true;
+            FormParas paras = new FormParas();
+            paras.RotateAngle = 0;
+            paras.UsingEdges = 0;
+
+            Form1 form = new Form1(paras);
+            form.TopLevel = false;
+            winform.Child = form;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            WorkSpaceInstance.TowerModelInstance.RunQhullCmd(@"E:\tower.asc", @"E:\result.off");
+        }
+
+        private void button1_Copy_Click_1(object sender, RoutedEventArgs e)
+        {
+            WorkSpaceInstance.TowerModelInstance.Build3DPointCloud();
+        }
+
         private void WorkingStatusButtonClick(object sender, RoutedEventArgs e)
         {
             WorkingDataImporterWindow newWindow = new WorkingDataImporterWindow();
@@ -117,141 +122,87 @@ namespace WpfRibbonApplication1
             hdwindow.Show();
         }
 
+        private void SaveProj_Click_1(object sender, RoutedEventArgs e)
+        {
+            OdbFactory.Delete(WorkSpaceInstance.DBNAME);
+            using (var odb = OdbFactory.Open(WorkSpaceInstance.DBNAME))
+            {
+                odb.Store(WorkSpaceInstance);
+                //MessageBox.Show(WorkSpaceInstance.Category.CategoryName);
+            }
+
+        }
+
         private void WorkingStatusAnalysis_Click_1(object sender, RoutedEventArgs e)
         {
             Views.WorkingStatusWindow wswindow = new Views.WorkingStatusWindow();
             wswindow.Show();
         }
+        #endregion
 
         private void ComfirmSettingButton_Click_1(object sender, RoutedEventArgs e)
         {
-            /*
-             * This is the interface between the main window and form window
-             * 1. Set the arguments which will be needed:
-             *    Argument list:
-             *    1. RotateAngle
-             *    2. UsingEdges
-             *    3. StageID
-             *    4. is3DReady
-             */
-            
-            //First: Get the arguments from the user's setting
             paras.RotateAngle = System.Convert.ToInt16(AngleBox.Text);
             paras.UsingEdges = SchemeBox.SelectedIndex;
             paras.StageID = BuildPhaseBox.SelectedIndex - 1;
-            paras.Height = winform.Height;
-            paras.Width = winform.Width;
 
+            //MessageBox.Show(paras.UsingEdges.ToString());
             is3Dready = true;
 
-            //Second: Pre-Build Model
-            Models.VTKFormPreExecutor preExecutor = new Models.VTKFormPreExecutor();
-            int EnvCheck = preExecutor.FormEnvironmentChecker(paras);
-            if (EnvCheck == 1)
-            {
-                // The Environment Check has been passed
-                // First: Build the environment 
-                if (WorkSpaceInstance.Env.BuildLisFileExecutor(paras) == -1)
-                {
-                    MessageBox.Show("文件不存在");
-                    return;
-                }
-
-                // Second: Get the model
-                TowerModel newTowerModel = preExecutor.TowerModelGetter( WorkSpaceInstance.Env.LisFileExecutor, 
-                                                                         WorkSpaceInstance.Env.TowerModelList,
-                                                                         WorkSpaceInstance.TowerModelInstance,
-                                                                         paras );
-                BuildForm(newTowerModel);
-            }
-            else if (EnvCheck == -1)
-            {
-                //Build Origin model
-                BuildForm(WorkSpaceInstance.TowerModelInstance);
-            }
+            BuildForm();
         }
 
-        public void BuildForm(TowerModel model)
+        public void BuildForm()
         {
             is3Dready = true;
-            VTKFormRender form = new VTKFormRender(paras, model, MainWindow.WorkSpaceInstance);
+            Form1 form = new Form1(paras);
             form.TopLevel = false;
             winform.Child = form;
         }
 
-        /*
-         * BuildModel string will be decided here
-         */
         private void TreeView_Selected_1(object sender, RoutedEventArgs e)
         {
-            string title = CloudPicTreeView.SelectedValue.ToString();
-            int bias = title.IndexOf("标");
+            Dictionary<string, int> CloudMapping = new Dictionary<string, int>();
+            CloudMapping.Add("Temperature", 0);
+            CloudMapping.Add("X-Component of Displacement", 1);
+            CloudMapping.Add("Y-Component of Displacement", 2);
+            CloudMapping.Add("Z-Component of Displacement", 3);
+            CloudMapping.Add("X-Component of Stress", 4);
+            CloudMapping.Add("Y-Component of Stress", 5);
+            CloudMapping.Add("Z-Component of Stress", 6);
+            CloudMapping.Add("X-Component of Total Machine Strain", 7);
+            CloudMapping.Add("Y-Component of Total Machine Strain", 8);
+            CloudMapping.Add("Z-Component of Total Machine Strain", 9);
+            CloudMapping.Add("X-Component of Total Machine Plastic Strain", 10);
+            CloudMapping.Add("Y-Component of Total Machine Plastic Strain", 11);
+            CloudMapping.Add("Z-Component of Total Machine Plastic Strain", 12);
 
-            string [] splitter = (title.Substring(bias + 3)).Split(' ');
-            paras.BuildModel = null;
-            int start_mark = 0;
-            for (int i = 0; i < splitter.Count(); i++)
+            int I = -1;
+            foreach (var dic in CloudMapping)
             {
-                if (splitter[i].IndexOf("Item") == -1)
-                {
-                    if (start_mark == 0)
-                        start_mark = 1;
-                    else
-                        paras.BuildModel += " ";
-                    paras.BuildModel += splitter[i];
-                }   
+                string k = dic.Key;
+                int idx = CloudPicTreeView.SelectedItem.ToString().IndexOf(k);
+                if (idx == -1)
+                    continue;
                 else
-                    break;
-            }
-            //MessageBox.Show(paras.BuildModel);
-        }
-
-        private void TreeViewSelectMethod(object sender, RoutedEventArgs e)
-        {
-            TreeViewItem SelectedOne = (TreeViewItem)CloudPicTreeView.SelectedItem;
-
-            paras.ModelID = CloudPicTreeView.Items.IndexOf(SelectedOne.Parent);
-            string title = CloudPicTreeView.SelectedValue.ToString();
-            int bias = title.IndexOf(":");
-
-            string [] splitter = (title.Substring(bias + 1)).Split(' ');
-            if(paras.ModelID != 0)
-                paras.SpecialID = int.Parse(splitter[0]) - 1;
-            //string ValueString = CloudPicTreeView.SelectedValue;
-
-            paras.BuildModel = null;
-            int start_mark = 0;
-            for (int i = 1; i < splitter.Count(); i++)
-            {
-                if (splitter[i].IndexOf("Item") == -1)
                 {
-                    if (start_mark == 0)
-                        start_mark = 1;
-                    else
-                        paras.BuildModel += " ";
-                    paras.BuildModel += splitter[i];
+                    I = dic.Value;
+                    break;
                 }
-                else
-                    break;
             }
+
+            paras.BuildModel = I;
         }
 
         private void RunModel_Click(object sender, RoutedEventArgs e)
         {
-            List<object> rtlist = new List<object>();
-            rtlist.Add(new { id = "1", info = "开始运行" });
-            //gridNoticeData.ItemsSource = rtlist;
-            rtlist.Add(new { id = "2", info = "运行结束" });
-            //System.Threading.Thread.Sleep(300);
-            gridNoticeData.ItemsSource = rtlist;
+            MessageBox.Show("运行设置已准备！");
             paras.StartRun = 1;
         }
 
         private void RunModelConfigure_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("运行参数设置保持默认");
-            Views.RunTimeSettingWindow rtsw = new Views.RunTimeSettingWindow();
-            rtsw.Show();
+            MessageBox.Show("运行参数设置保持默认");
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -265,6 +216,11 @@ namespace WpfRibbonApplication1
             {
                 paras.tempFile = openFileDialog1.FileName;
             }
+        }
+
+        private void BuildCoord_Copy2_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
