@@ -171,7 +171,7 @@ namespace WpfRibbonApplication1
 
                 mapper.SetInputConnection(refilter.GetOutputPort());
             }
-            mapper.SetScalarRange(0, 4);
+            mapper.SetScalarRange(0, 5);
             mapper.SetLookupTable(Luk);
             actor.SetMapper(mapper);
             
@@ -183,8 +183,59 @@ namespace WpfRibbonApplication1
             Luk.SetTableValue(4, 0, 0, 0.8, 1); //insider
             Luk.SetTableValue(5, 0, 0.8, 0, 1); //outer surface
             Luk.Build();
+        }
 
+        public void ExtractEdgesVTKBuilderWithoutRunning(ref vtkActor actor, ref vtkPoints points, ref vtkCellArray polys,
+                                                            ref vtkFloatArray scalars, ref vtkLookupTable Luk)
+        {
+            int pointsNum = 0;
+
+            TowerModelInstance.VTKDrawModel(ref points, ref polys, ref scalars, ref pointsNum, paras);
+
+            vtkPolyData profile = vtkPolyData.New();
+
+            profile.SetPoints(points);
+            profile.SetPolys(polys);
+
+            vtkExtractEdges ExtProfile = new vtkExtractEdges();
             
+
+            vtkPolyDataMapper mapper = vtkPolyDataMapper.New();
+
+            if (paras.RotateAngle == 0)
+            {
+                profile.GetCellData().SetScalars(scalars);
+                ExtProfile.SetInput(profile);
+                mapper.SetInputConnection(ExtProfile.GetOutputPort());
+            }
+            else
+            {
+                vtkRotationalExtrusionFilter refilter = vtkRotationalExtrusionFilter.New();
+                profile.Update();
+                profile.GetCellData().SetScalars(scalars);
+                //profile.GetPointData().SetScalars(scalars);
+                ExtProfile.SetInput(profile);
+                
+                refilter.SetInputConnection(ExtProfile.GetOutputPort());
+                refilter.SetResolution(50);
+                refilter.SetAngle(paras.RotateAngle);
+                refilter.SetTranslation(0);
+                refilter.SetDeltaRadius(0);
+
+                mapper.SetInputConnection(refilter.GetOutputPort());
+            }
+            mapper.SetScalarRange(0, 5);
+            mapper.SetLookupTable(Luk);
+            actor.SetMapper(mapper);
+
+            Luk.SetNumberOfTableValues(7);
+            Luk.SetTableValue(0, 0, 1, 0, 1); //
+            Luk.SetTableValue(1, 0, 0, 0.8, 1); //inner surface
+            Luk.SetTableValue(2, 0, 1, 0, 1); //
+            Luk.SetTableValue(3, 0, 0, 1, 1);
+            Luk.SetTableValue(4, 0, 0, 0.8, 1); //insider
+            Luk.SetTableValue(5, 0, 0.8, 0, 1); //outer surface
+            Luk.Build();
         }
 
         private vtkActor2D VirtualHeaterVTKBuilder()
@@ -269,6 +320,7 @@ namespace WpfRibbonApplication1
             //
             vtkRenderer ren1 = renderWindowControl1.RenderWindow.GetRenderers().GetFirstRenderer();
             vtkRenderWindow renWin = renderWindowControl1.RenderWindow;
+            renWin.SetSize((int)paras.Height, (int)paras.Width);
 
             // Add the actors to the renderer, set the window size
             //
@@ -282,17 +334,27 @@ namespace WpfRibbonApplication1
                 vtkActor2D actor2D = new vtkActor2D();
                 if (paras.StageID != -1)
                 {
-                    BasicVTKBuilder(ref actor1, ref points, ref polys, ref scalars, ref Luk, ref actor2D);
-                    ren1.AddActor(actor1);
-                    ren1.AddActor2D(actor2D);
+                    if (paras.UsingEdges == 1)
+                    {
+                        MessageBox.Show("单元显示无法使用");
+                    }
+                    else
+                    {
+                        BasicVTKBuilder(ref actor1, ref points, ref polys, ref scalars, ref Luk, ref actor2D);
+                        ren1.AddActor(actor1);
+                        ren1.AddActor2D(actor2D);
 
-                    vtkActor2D textActor = new vtkActor2D();
-                    VTKInfoBuilder(ref textActor);
-                    ren1.AddActor2D(textActor);
+                        vtkActor2D textActor = new vtkActor2D();
+                        VTKInfoBuilder(ref textActor);
+                        ren1.AddActor2D(textActor);
+                    }
                 }
                 else
                 {
-                    BasicVTKBuilderWithoutRunning(ref actor1, ref points, ref polys, ref scalars, ref Luk);
+                    if (paras.UsingEdges == 1)
+                        ExtractEdgesVTKBuilderWithoutRunning(ref actor1, ref points, ref polys, ref scalars, ref Luk);
+                    else
+                        BasicVTKBuilderWithoutRunning(ref actor1, ref points, ref polys, ref scalars, ref Luk);
                     ren1.AddActor(actor1);
                 }
             }
@@ -304,21 +366,24 @@ namespace WpfRibbonApplication1
                 ren1.AddActor(actor2);
             }
 
-            renWin.SetSize((int)paras.Height, (int)paras.Width);
+            
             renWin.Render();
             vtkCamera camera = ren1.GetActiveCamera();
 
+            //camera.ParallelProjectionOn();
+            //camera.Elevation(20);
             int[] camera_pos = new int[3];
-            
+
             if (paras.globalEnv == 1)
                 camera_pos[1] = -70;
             else
-                camera_pos[1] = -70;
+                camera_pos[1] = -80;
 
             if (paras.RotateAngle == 0)
             {
+                camera_pos[1] = -camera_pos[1];
                 camera_pos[0] = camera_pos[2] = 0;
-                camera.SetRoll(181);
+                camera.SetRoll(-2);
             }
             else if (paras.RotateAngle == 180)
             {
@@ -343,7 +408,10 @@ namespace WpfRibbonApplication1
             }
 
             camera.SetPosition((double)camera_pos[0], (double)camera_pos[1], (double)camera_pos[2]);
-
+            //camera.Yaw(10);
+            camera.Elevation(1);
+            camera.ParallelProjectionOn();
+            camera.Zoom(0.9);
             StoredViewCamera = new List<vtkCamera>();
             for (int i = 0; i < 3; i++)
             {
@@ -364,15 +432,15 @@ namespace WpfRibbonApplication1
                 }
                 else if (i == 2)
                 {
-                    ViewCamera.SetPosition(0, 0, 60);
+                    ViewCamera.SetPosition(0, 0, -80);
                     ViewCamera.SetRoll(camera.GetRoll());
                 }
                 ViewCamera.SetFocalPoint(camera.GetFocalPoint()[0],
                                               camera.GetFocalPoint()[1],
                                               camera.GetFocalPoint()[2]);
                 ViewCamera.SetViewUp(camera.GetViewUp()[0],
-                                          camera.GetViewUp()[1],
-                                          camera.GetViewUp()[2]);
+                                    camera.GetViewUp()[1],
+                                    camera.GetViewUp()[2]);
                 StoredViewCamera.Add(ViewCamera);
             }
 

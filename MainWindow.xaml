@@ -984,9 +984,9 @@
                         <TreeViewItem Header="4 XY Shear Stress" Foreground="{DynamicResource text color}"/>
                         <TreeViewItem Header="5 YZ Shear Stress" Foreground="{DynamicResource text color}"/>
                         <TreeViewItem Header="6 XZ Shear Stress" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="7 1st Principle Stree" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="8 2nd Principle Stree" Foreground="{DynamicResource text color}"/>
-                        <TreeViewItem Header="9 3rd Principle Stree" Foreground="{DynamicResource text color}"/>
+                        <TreeViewItem Header="7 1st Principle Stress" Foreground="{DynamicResource text color}"/>
+                        <TreeViewItem Header="8 2nd Principle Stress" Foreground="{DynamicResource text color}"/>
+                        <TreeViewItem Header="9 3rd Principle Stress" Foreground="{DynamicResource text color}"/>
                         <TreeViewItem Header="10 Stress Intensity" Foreground="{DynamicResource text color}"/>
                         <TreeViewItem Header="11 Von Mises Stress" Foreground="{DynamicResource text color}"/>
                     </TreeViewItem>

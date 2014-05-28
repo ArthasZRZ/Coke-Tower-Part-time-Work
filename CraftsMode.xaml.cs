@@ -37,11 +37,13 @@ namespace WpfRibbonApplication1
             //Second: VTK
             Models.CraftsModeExecutor CfExe = new Models.CraftsModeExecutor();
             //Set the environment
-            CfExe.CraftsModeEnvSetter((int)this.WinFormGrid.Width, (int)this.WinFormGrid.Height);
+            CfExe.CraftsModeEnvSetter(450, 500);
+            //MessageBox.Show(this.WinFormGrid.ActualWidth.ToString() + ' ' + this.WinFormGrid.ActualHeight.ToString());
             //Get the Model
             TowerModel CraftsModeTowerModel = CfExe.CraftsModePreExecutor();
-
+            
             FormParas CraftsModeFormParas = CfExe.CraftsModeFormParasGetter();
+            
             WorkSpaceClass CraftsModeWorkSpaceInstance = CfExe.CraftsModeWorkSpaceInstance();
 
             VTKFormRender CraftsModeForm = new VTKFormRender(CraftsModeFormParas,
@@ -155,6 +157,83 @@ namespace WpfRibbonApplication1
                              form.StoredViewCamera[2].GetViewUp()[2]);
 
             renWin.Render();
+        }
+
+        private void Menu_Click_1(object sender, RoutedEventArgs e)
+        {
+            Models.CraftsModeExecutor CfExe = new Models.CraftsModeExecutor();
+            //Set the environment
+            CfExe.CraftsModeEnvSetter((int)this.WinFormGrid.Width, (int)this.WinFormGrid.Height);
+
+            MenuItem mi = e.Source as MenuItem;
+
+            if (mi.Header.ToString() != "System.Windows.Controls.TextBlock")
+            {
+                string mi_header = (string)mi.Header;
+                MenuItem mi_parent = (MenuItem)mi.Parent;
+
+                string mi_p_header = (string)mi_parent.Header;
+
+                int StageId = 0, ModelId = 0, SpecialId = 0;
+                if (mi_header == "温度模型")
+                {
+                    StageId = NameToStageId(mi_p_header);
+                    ModelId = 0;
+                    SpecialId = 0;
+                }
+                else
+                {
+                    MenuItem mi_pparent = (MenuItem)mi_parent.Parent;
+                    string mi_pp_header = (string)mi_pparent.Header;
+
+                    StageId = NameToStageId(mi_pp_header);
+                    ModelId = NameToModelId(mi_p_header);
+                    SpecialId = int.Parse(mi_header.Split(' ')[0]);
+                }
+
+
+                CfExe.CraftsModeEnvModelSetter(StageId, ModelId, SpecialId);
+                CfExe.CraftsModeEnvStartRunningSetter();
+
+                TowerModel CraftsModeTowerModel = CfExe.CraftsModePreExecutor();
+
+                FormParas CraftsModeFormParas = CfExe.CraftsModeFormParasGetter();
+                WorkSpaceClass CraftsModeWorkSpaceInstance = CfExe.CraftsModeWorkSpaceInstance();
+
+                VTKFormRender CraftsModeForm = new VTKFormRender(CraftsModeFormParas,
+                                                                 CraftsModeTowerModel,
+                                                                 CraftsModeWorkSpaceInstance);
+                CraftsModeForm.TopLevel = false;
+                CraftsModeWinForm.Child = CraftsModeForm;
+            }
+        }
+        private int NameToStageId(string name)
+        {
+            if (name == "预热阶段")
+                return 0;
+            else if (name == "进油生焦阶段")
+                return 1;
+            else if (name == "吹气冷焦阶段")
+                return 2;
+            else if (name == "给水冷焦阶段")
+                return 3;
+            else
+                return -1;
+        }
+        private int NameToModelId(string name)
+        {
+            if (name == "温度模型")
+                return 0;
+            else if (name == "变形模型")
+                return 1;
+            else if (name == "应力模型")
+                return 2;
+            else if (name == "弹性应变模型")
+                return 3;
+            else if (name == "塑性应变模型")
+                return 4;
+            else
+                return -1;
         }
 	}
 }

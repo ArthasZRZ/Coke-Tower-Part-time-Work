@@ -78,7 +78,7 @@
                         <ColumnDefinition Width="149*"/>
                         <ColumnDefinition Width="323*"/>
                     </Grid.ColumnDefinitions>
-                    <WindowsFormsHost x:Name="CraftsModeWinForm" Grid.ColumnSpan="2" />
+                    <WindowsFormsHost x:Name="CraftsModeWinForm" Grid.ColumnSpan="2" Margin="10" />
                 </Grid>
                 <Button HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" 
                         Width="80" Style="{DynamicResource ButtonWithImg}" Tag="正视图"
@@ -94,15 +94,232 @@
                 </Button>
             </Grid>
             <Grid x:Name="RightSideBar" Margin="0,0,10,0" Width="380" HorizontalAlignment="Right" d:LayoutOverrides="GridBox">
-                <Grid Height="60" VerticalAlignment="Top" Background="{DynamicResource 61\,61\,61}">
+                <Grid Height="45" VerticalAlignment="Top" Background="{DynamicResource 61\,61\,61}">
                     <Grid Height="20" Margin="0" VerticalAlignment="Top" Background="{DynamicResource 99\,99\,99}">
-                        <TextBlock Margin="0,0,0,2.081" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="107.127"><Run Language="zh-cn" Text="仿真分析&amp;结果展示"/></TextBlock>
+                        <TextBlock Margin="0,0,0,0" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="107.127"><Run Language="zh-cn" Text="仿真分析&amp;结果展示"/></TextBlock>
+                    </Grid>
+                    <Grid Height="25" Margin="0,20,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="24*"/>
+                            <ColumnDefinition Width="71*"/>
+                        </Grid.ColumnDefinitions>
+                        <Menu Height="25" Grid.ColumnSpan="2" MenuItem.Click="Menu_Click_1">
+                            <MenuItem Width="75" Margin="5,0,0,0">
+                                <MenuItem.Header>
+                                    <TextBlock Text="分析" VerticalAlignment="Center" HorizontalAlignment="Center"/>                            
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem Width="75" Margin="5,0,0,0">
+                                <MenuItem.Header>
+                                    <TextBlock Text="阶段" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                            <MenuItem Width="75" Margin="5,0,0,0">
+                                <MenuItem.Header>
+                                    <TextBlock Text="云图" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </MenuItem.Header>
+                                <MenuItem Header="预热阶段">
+                                    <MenuItem Header="温度模型"></MenuItem>
+                                    <MenuItem Header="变形模型">
+                                        <MenuItem Header="1 X-Component of Displacement"/>
+                                        <MenuItem Header="2 Y-Component of Displacement"/>
+                                        <MenuItem Header="3 Z-Component of Displacement"/>
+                                        <MenuItem Header="4 Displacement Vector Sum"/>
+                                    </MenuItem>
+                                    <MenuItem Header="应力模型">
+                                        <MenuItem Header="1 X-Component of Stress"/>
+                                        <MenuItem Header="2 Y-Component of Stress"/>
+                                        <MenuItem Header="3 Z-Component of Stress"/>
+                                        <MenuItem Header="4 XY Shear Stress"/>
+                                        <MenuItem Header="5 YZ Shear Stress"/>
+                                        <MenuItem Header="6 XZ Shear Stress"/>
+                                        <MenuItem Header="7 1st Principle Stress"/>
+                                        <MenuItem Header="8 2nd Principle Stress"/>
+                                        <MenuItem Header="9 3rd Principle Stress"/>
+                                        <MenuItem Header="10 Stress Intensity"/>
+                                        <MenuItem Header="11 Von Mises Stress"/>
+                                    </MenuItem>
+                                    <MenuItem Header="弹性应变模型">
+                                        <MenuItem Header="1 X-Component of Strain"/>
+                                        <MenuItem Header="2 Y-Component of Strain"/>
+                                        <MenuItem Header="3 Z-Component of Strain"/>
+                                        <MenuItem Header="4 XY Shear Strain"/>
+                                        <MenuItem Header="5 YZ Shear Strain"/>
+                                        <MenuItem Header="6 XZ Shear Strain"/>
+                                        <MenuItem Header="7 1st Principle Strain"/>
+                                        <MenuItem Header="8 2nd Principle Strain"/>
+                                        <MenuItem Header="9 3rd Principle Strain"/>
+                                        <MenuItem Header="10 Strain Intensity"/>
+                                        <MenuItem Header="11 Von Mises Strain"/>
+                                    </MenuItem>
+                                    <MenuItem Header="塑性应变模型">
+                                        <MenuItem Header="1 X-Component of Plastic Strain"/>
+                                        <MenuItem Header="2 Y-Component of Plastic Strain"/>
+                                        <MenuItem Header="3 Z-Component of Plastic Strain"/>
+                                        <MenuItem Header="4 XY Shear Plastic Strain"/>
+                                        <MenuItem Header="5 YZ Shear Plastic Strain"/>
+                                        <MenuItem Header="6 XZ Shear Plastic Strain"/>
+                                        <MenuItem Header="7 1st Principle Plastic Strain"/>
+                                        <MenuItem Header="8 2nd Principle Plastic Strain"/>
+                                        <MenuItem Header="9 3rd Principle Plastic Strain"/>
+                                        <MenuItem Header="10 Plastic Strain Intensity"/>
+                                        <MenuItem Header="11 Von Mises Plastic Strain"/>
+                                    </MenuItem>
+                                </MenuItem>
+                                <MenuItem Header="进油生焦阶段">
+                                    <MenuItem Header="温度模型"></MenuItem>
+                                    <MenuItem Header="变形模型">
+                                        <MenuItem Header="1 X-Component of Displacement"/>
+                                        <MenuItem Header="2 Y-Component of Displacement"/>
+                                        <MenuItem Header="3 Z-Component of Displacement"/>
+                                        <MenuItem Header="4 Displacement Vector Sum"/>
+                                    </MenuItem>
+                                    <MenuItem Header="应力模型">
+                                        <MenuItem Header="1 X-Component of Stress"/>
+                                        <MenuItem Header="2 Y-Component of Stress"/>
+                                        <MenuItem Header="3 Z-Component of Stress"/>
+                                        <MenuItem Header="4 XY Shear Stress"/>
+                                        <MenuItem Header="5 YZ Shear Stress"/>
+                                        <MenuItem Header="6 XZ Shear Stress"/>
+                                        <MenuItem Header="7 1st Principle Stress"/>
+                                        <MenuItem Header="8 2nd Principle Stress"/>
+                                        <MenuItem Header="9 3rd Principle Stress"/>
+                                        <MenuItem Header="10 Stress Intensity"/>
+                                        <MenuItem Header="11 Von Mises Stress"/>
+                                    </MenuItem>
+                                    <MenuItem Header="弹性应变模型">
+                                        <MenuItem Header="1 X-Component of Strain"/>
+                                        <MenuItem Header="2 Y-Component of Strain"/>
+                                        <MenuItem Header="3 Z-Component of Strain"/>
+                                        <MenuItem Header="4 XY Shear Strain"/>
+                                        <MenuItem Header="5 YZ Shear Strain"/>
+                                        <MenuItem Header="6 XZ Shear Strain"/>
+                                        <MenuItem Header="7 1st Principle Strain"/>
+                                        <MenuItem Header="8 2nd Principle Strain"/>
+                                        <MenuItem Header="9 3rd Principle Strain"/>
+                                        <MenuItem Header="10 Strain Intensity"/>
+                                        <MenuItem Header="11 Von Mises Strain"/>
+                                    </MenuItem>
+                                    <MenuItem Header="塑性应变模型">
+                                        <MenuItem Header="1 X-Component of Plastic Strain"/>
+                                        <MenuItem Header="2 Y-Component of Plastic Strain"/>
+                                        <MenuItem Header="3 Z-Component of Plastic Strain"/>
+                                        <MenuItem Header="4 XY Shear Plastic Strain"/>
+                                        <MenuItem Header="5 YZ Shear Plastic Strain"/>
+                                        <MenuItem Header="6 XZ Shear Plastic Strain"/>
+                                        <MenuItem Header="7 1st Principle Plastic Strain"/>
+                                        <MenuItem Header="8 2nd Principle Plastic Strain"/>
+                                        <MenuItem Header="9 3rd Principle Plastic Strain"/>
+                                        <MenuItem Header="10 Plastic Strain Intensity"/>
+                                        <MenuItem Header="11 Von Mises Plastic Strain"/>
+                                    </MenuItem>
+                                </MenuItem>
+                                <MenuItem Header="吹气冷焦阶段">
+                                    <MenuItem Header="温度模型"></MenuItem>
+                                    <MenuItem Header="变形模型">
+                                        <MenuItem Header="1 X-Component of Displacement"/>
+                                        <MenuItem Header="2 Y-Component of Displacement"/>
+                                        <MenuItem Header="3 Z-Component of Displacement"/>
+                                        <MenuItem Header="4 Displacement Vector Sum"/>
+                                    </MenuItem>
+                                    <MenuItem Header="应力模型">
+                                        <MenuItem Header="1 X-Component of Stress"/>
+                                        <MenuItem Header="2 Y-Component of Stress"/>
+                                        <MenuItem Header="3 Z-Component of Stress"/>
+                                        <MenuItem Header="4 XY Shear Stress"/>
+                                        <MenuItem Header="5 YZ Shear Stress"/>
+                                        <MenuItem Header="6 XZ Shear Stress"/>
+                                        <MenuItem Header="7 1st Principle Stress"/>
+                                        <MenuItem Header="8 2nd Principle Stress"/>
+                                        <MenuItem Header="9 3rd Principle Stress"/>
+                                        <MenuItem Header="10 Stress Intensity"/>
+                                        <MenuItem Header="11 Von Mises Stress"/>
+                                    </MenuItem>
+                                    <MenuItem Header="弹性应变模型">
+                                        <MenuItem Header="1 X-Component of Strain"/>
+                                        <MenuItem Header="2 Y-Component of Strain"/>
+                                        <MenuItem Header="3 Z-Component of Strain"/>
+                                        <MenuItem Header="4 XY Shear Strain"/>
+                                        <MenuItem Header="5 YZ Shear Strain"/>
+                                        <MenuItem Header="6 XZ Shear Strain"/>
+                                        <MenuItem Header="7 1st Principle Strain"/>
+                                        <MenuItem Header="8 2nd Principle Strain"/>
+                                        <MenuItem Header="9 3rd Principle Strain"/>
+                                        <MenuItem Header="10 Strain Intensity"/>
+                                        <MenuItem Header="11 Von Mises Strain"/>
+                                    </MenuItem>
+                                    <MenuItem Header="塑性应变模型">
+                                        <MenuItem Header="1 X-Component of Plastic Strain"/>
+                                        <MenuItem Header="2 Y-Component of Plastic Strain"/>
+                                        <MenuItem Header="3 Z-Component of Plastic Strain"/>
+                                        <MenuItem Header="4 XY Shear Plastic Strain"/>
+                                        <MenuItem Header="5 YZ Shear Plastic Strain"/>
+                                        <MenuItem Header="6 XZ Shear Plastic Strain"/>
+                                        <MenuItem Header="7 1st Principle Plastic Strain"/>
+                                        <MenuItem Header="8 2nd Principle Plastic Strain"/>
+                                        <MenuItem Header="9 3rd Principle Plastic Strain"/>
+                                        <MenuItem Header="10 Plastic Strain Intensity"/>
+                                        <MenuItem Header="11 Von Mises Plastic Strain"/>
+                                    </MenuItem>
+                                </MenuItem>
+                                <MenuItem Header="给水冷焦阶段">
+                                    <MenuItem Header="温度模型"></MenuItem>
+                                    <MenuItem Header="变形模型">
+                                        <MenuItem Header="1 X-Component of Displacement"/>
+                                        <MenuItem Header="2 Y-Component of Displacement"/>
+                                        <MenuItem Header="3 Z-Component of Displacement"/>
+                                        <MenuItem Header="4 Displacement Vector Sum"/>
+                                    </MenuItem>
+                                    <MenuItem Header="应力模型">
+                                        <MenuItem Header="1 X-Component of Stress"/>
+                                        <MenuItem Header="2 Y-Component of Stress"/>
+                                        <MenuItem Header="3 Z-Component of Stress"/>
+                                        <MenuItem Header="4 XY Shear Stress"/>
+                                        <MenuItem Header="5 YZ Shear Stress"/>
+                                        <MenuItem Header="6 XZ Shear Stress"/>
+                                        <MenuItem Header="7 1st Principle Stress"/>
+                                        <MenuItem Header="8 2nd Principle Stress"/>
+                                        <MenuItem Header="9 3rd Principle Stress"/>
+                                        <MenuItem Header="10 Stress Intensity"/>
+                                        <MenuItem Header="11 Von Mises Stress"/>
+                                    </MenuItem>
+                                    <MenuItem Header="弹性应变模型">
+                                        <MenuItem Header="1 X-Component of Strain"/>
+                                        <MenuItem Header="2 Y-Component of Strain"/>
+                                        <MenuItem Header="3 Z-Component of Strain"/>
+                                        <MenuItem Header="4 XY Shear Strain"/>
+                                        <MenuItem Header="5 YZ Shear Strain"/>
+                                        <MenuItem Header="6 XZ Shear Strain"/>
+                                        <MenuItem Header="7 1st Principle Strain"/>
+                                        <MenuItem Header="8 2nd Principle Strain"/>
+                                        <MenuItem Header="9 3rd Principle Strain"/>
+                                        <MenuItem Header="10 Strain Intensity"/>
+                                        <MenuItem Header="11 Von Mises Strain"/>
+                                    </MenuItem>
+                                    <MenuItem Header="塑性应变模型">
+                                        <MenuItem Header="1 X-Component of Plastic Strain"/>
+                                        <MenuItem Header="2 Y-Component of Plastic Strain"/>
+                                        <MenuItem Header="3 Z-Component of Plastic Strain"/>
+                                        <MenuItem Header="4 XY Shear Plastic Strain"/>
+                                        <MenuItem Header="5 YZ Shear Plastic Strain"/>
+                                        <MenuItem Header="6 XZ Shear Plastic Strain"/>
+                                        <MenuItem Header="7 1st Principle Plastic Strain"/>
+                                        <MenuItem Header="8 2nd Principle Plastic Strain"/>
+                                        <MenuItem Header="9 3rd Principle Plastic Strain"/>
+                                        <MenuItem Header="10 Plastic Strain Intensity"/>
+                                        <MenuItem Header="11 Von Mises Plastic Strain"/>
+                                    </MenuItem>
+                                </MenuItem>
+                            </MenuItem>
+                            <MenuItem Width="75" Margin="5,0,0,0">
+                                <MenuItem.Header>
+                                    <TextBlock Text="报告" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                        </Menu>
                     </Grid>
                 </Grid>
-                <Button Content="分析" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button Content="阶段" HorizontalAlignment="Left" Margin="95,30,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button Content="云图" Margin="180,30,0,0" VerticalAlignment="Top" Width="75" HorizontalAlignment="Left"/>
-                <Button Content="报告" Margin="265,30,0,0" VerticalAlignment="Top" Width="75" HorizontalAlignment="Left"/>
+                
                 <TabControl Height="300" Margin="0,70,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}">
                     <TabItem Header="绘制曲线" Margin="-2,-2,-2,-1" Width="65">
                         <Grid Background="#FFE5E5E5">

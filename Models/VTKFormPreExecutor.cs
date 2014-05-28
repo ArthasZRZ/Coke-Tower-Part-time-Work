@@ -73,8 +73,8 @@ namespace WpfRibbonApplication1.Models
                 mResolver.ModelParameterResolver(EnvLisFileReader.param.ModelTypeId, NewTowerModel, EnvLisFileReader);
             */
             // Last: Put the model in the list
-            string TowerModelName = TowerModelNameGetter(EnvLisFileReader);
-            TowerModelList.InsertTowerModel(NewTowerModel, TowerModelName);
+            //string TowerModelName = TowerModelNameGetter(EnvLisFileReader);
+            //TowerModelList.InsertTowerModel(NewTowerModel, TowerModelName);
 
             return NewTowerModel;
         }
